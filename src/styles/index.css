@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Temporarily replace the 'VCR' font with a fallback font */
+@font-face {
+  font-family: 'VCR';
+  src: local('Courier New'), local('Courier'), monospace;
+}
+
+:root {
+  font-family: 'Lora', serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  ;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+.ascii {
+  margin-bottom: 0;
+  padding: 0;
+  white-space: pre;
+  font-weight: 700;
+  font-family: monospace;
+}
+
+.dvd {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 200px;
+  width: 200px;
+  background-repeat: no-repeat;
+  background-size: 75px;
+  background-position: center;
+}
+
+strike {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+@-moz-keyframes spin {
+  from {
+    -moz-transform: rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

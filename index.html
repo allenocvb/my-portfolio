@@ -1,13 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preload" as="image" href="/head.jpeg" />
+    <link rel="preload" as="fetch" href="/effect.webm" />
+    <link rel="icon" type="image/png" href="/head.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <link rel="stylesheet" href="/src/styles/index.css" />
+    <title>My Portfolio</title>
   </head>
-  <body>
-    <div id="root"></div>
+  <body class="overflow-hidden">
+    <div id="root" class="transition-opacity duration-1000">
+      <div
+        id="vcr"
+        class="overlay absolute flex flex-col bg-black pointer-events-none w-full text-4xl sm:text-5xl md:text-6xl lg:text-8xl h-screen pb-32 p-8 md:p-16 text-white font-mono motion-reduce:transition-none transition-opacity duration-500"
+      >
+        <div class="flex justify-between mb-auto animate-pulse motion-reduce:animate-none">
+          <p class="glitch">PLAY ►</p>
+          <p class="glitch">--:--</p>
+        </div>
+        <div class="flex mx-auto animate-pulse motion-reduce:animate-none">
+          <p id="reminder" class="transition duration-500 glitch text-md sm:text-lg md:text-xl lg:text-2xl opacity-0">
+            click to begin
+          </p>
+        </div>
+        <div class="flex justify-between mt-auto animate-pulse motion-reduce:animate-none" id="marker">
+          <p class="glitch">SP</p>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
+
+
+
