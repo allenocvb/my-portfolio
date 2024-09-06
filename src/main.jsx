@@ -109,7 +109,7 @@ const EjectScreen = ({ onRewind }) => {
         }}
       />
       <p style={{ fontSize: '24px', textAlign: 'center', maxWidth: '80%', marginBottom: '20px', zIndex: 2 }}>
-      ""Begin doing what you want to do now. We are not living in eternity. We have only this moment, sparkling like a star in our hand—and melting like a snowflake." — Francis Bacon"
+      "Begin doing what you want to do now. We are not living in eternity. We have only this moment, sparkling like a star in our hand—and melting like a snowflake." — Francis Bacon
       </p>
       <button onClick={onRewind} style={{ padding: '10px 20px', fontSize: '18px', cursor: 'pointer', zIndex: 2 }}>Rewind(Click)</button>
     </div>
@@ -142,6 +142,18 @@ const Content = ({ onEject }) => (
       Leveraged strong communication and teaching skills to break down complex concepts for diverse learners."
       logo="/src/assets/355CodeLogo.png"
     />
+    <Wexperience
+      title="Summiteer"
+      company="Capital One"
+      timeframe="July 2023 - August 2023"
+      description="Selected as one of 31 participants to participate in a week-long summit. 
+      Attended a week of technical workshops on Web, Full-Stack, and Mobile Development using Git, React, SQL, APIs, AR (Snapchat Lens Studio), Swift, and more.
+      Finished 2nd place at the Summit hackathon where I worked in a group of four to create an application with the theme of 'Changing banking for good.'"
+      logo="/src/assets/CapitalOneLogo.jpg"
+    />
+    <h2 id="Projects" className={styles.sectionTitle}>
+      Projects
+    </h2>
   </div>
 );
 
