@@ -7,6 +7,7 @@ import aboutMe from './components/aboutMe';
 import { PowerGlitch } from 'powerglitch';
 import styles from './styles/SectionTitles.module.scss';
 import Wexperience from './components/Wexperience';
+import ProjectCard from './components/ProjectCard'
 import AnimatedBackground from './components/AnimatedBackground';
 
 const rootElement = document.getElementById('root');
@@ -154,6 +155,24 @@ const Content = ({ onEject }) => (
     <h2 id="Projects" className={styles.sectionTitle}>
       Projects
     </h2>
+    <ProjectCard 
+      logo="/src/assets/HornetInvasionImg.png"
+      project="Hornet Invasion(Space Invaders)"
+      source="Personal"
+      description="Recreated the classic Space Alien game by replacing the original elements with an exterminator and bugs.
+      Developed a 2D game using pygame, a powerful Python library, incorporating user input, key presses, and mouse-click functionality."
+      stack="Python, CSS, Pygame"
+    />
+    <ProjectCard 
+      logo="/src/assets/OdinRecipesImg.png"
+      project="One Piece Recipes Site"
+      source="Personal"
+      description="This website is was my very first HTML/CSS project, marking my introduction to web development. 
+      It features a collection of recipes inspired by the One Piece anime, including:
+      Marine Captain's Curry, Sanji's Risotto, Franky Cola, Elbaf Semla, Tony Tony Chopper's Cotton Candy, and Oden."
+      stack="HTML, CSS"
+    />
+    
   </div>
 );
 

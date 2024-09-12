@@ -1,0 +1,81 @@
+.projectCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5rem auto;
+    padding: 2rem;
+    background-color: #dfdfe6;
+    border-radius: 30px;
+    box-shadow: 0 50px 100px rgba(50, 50, 93, 0.05),
+      0 15px 35px rgba(87, 87, 105, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    width: calc(100% - 40px); // Subtract 40px to ensure there's always some space on the sides
+    box-sizing: border-box;
+  }
+  
+  .projectContent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .sourceTitle {
+    font-size: 1.2em;
+    color: #535bf2;
+  }
+  
+  .imageContainer {
+    flex: 0 0 180px;
+    margin-right: 20px;
+  }
+  
+  .projectLogo {
+    width: 100%;
+    height: auto;
+    max-width: 180px;
+    //border-radius: 7px;
+    //border: 2px solid #004AAD;
+  }
+  
+  .detailsContainer {
+    flex: 1;
+  }
+  
+  .projectName {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  .stack {
+    font-weight: bold;
+  }
+
+  .description {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+ 
+  
+  @media (max-width: 768px) {
+    .projectContent {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .imageContainer {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  
+    .detailsContainer {
+      text-align: center;
+    }
+  
+    .projectCard {
+      width: calc(100% - 20px); // Reduce side spacing on smaller screens
+      padding: 15px; // Reduce padding on smaller screens
+    }
+  }
