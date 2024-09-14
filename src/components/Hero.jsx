@@ -15,8 +15,8 @@ const Hero = () => (
     <Typewriter
       className={styles.heroTitle}
       text="Allen Odoom"
-      minTypeSpeed={100}  // Increase these values to slow down typing
-      maxTypeSpeed={150}  // Increase these values to slow down typing
+      minTypeSpeed={100}
+      maxTypeSpeed={150}
       initDelay={700}
     />
     <div className={styles.heroDescription}>
@@ -24,6 +24,10 @@ const Hero = () => (
 
       Check out my <Scrollchor to="#projects">side-projects</Scrollchor> below.
     </div>
+    {/* Add the new italic text here */}
+    <p className={styles.heroNote}>
+      P.S. Try ejecting the page!
+    </p>
   </div>
 );
 

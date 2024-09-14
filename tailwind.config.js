@@ -5,7 +5,9 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx,css}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      mono: ['VCR']
+    },
   },
   plugins: [],
 }

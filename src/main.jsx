@@ -105,7 +105,20 @@ const EjectScreen = ({ onRewind }) => {
 
 
  return (
-   <div id="eject-screen" style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', backgroundColor: 'black', color: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
+   <div id="eject-screen" style={{ 
+    fontFamily: 'VCR, monospace', 
+    position: 'fixed', 
+    top: 0, 
+    left: 0, 
+    width: '100vw', 
+    height: '100vh', 
+    backgroundColor: 'black', 
+    color: 'white', 
+    display: 'flex', 
+    flexDirection: 'column', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    overflow: 'hidden' }}>
      <AnimatedBackground />
      <img
        src="/src/assets/spaceinvaders2.gif"
@@ -185,6 +198,55 @@ const Content = ({ onEject }) => (
      Marine Captain's Curry, Sanji's Risotto, Franky Cola, Elbaf Semla, Tony Tony Chopper's Cotton Candy, and Oden."
      stack="HTML, CSS"
    />
+   <ProjectCard
+     logo="/src/assets/OdinRecipesImg.png"
+     project="Art Explorer App"
+     source="Personal"
+     description="Developed an iOS app using SwiftUI that allows users to explore artworks from the Harvard Art Museums API. 
+     The app enables users to browse artworks filtered by artist, medium, and period. 
+     Each artwork includes a detailed view with an image, description, and artist information. 
+     Implemented search functionality and asynchronous image loading to enhance user experience."
+     stack="SwiftUI, Harvard Art Museums API, URLSession, AsyncImage, JSON Parsing"
+   />
+   <ProjectCard
+     logo="/src/assets/OdinRecipesImg.png"
+     project="Scavenger Hunt App"
+     source="Personal"
+     description="Built an iOS scavenger hunt app where users complete tasks by attaching photos from their library or camera. 
+     Each task includes a title, description, and completion status, with a map displaying the location where the photo was taken. 
+     Users can view a list of tasks, mark them as completed by attaching a photo, and see custom map annotations for the task location. 
+     Implemented photo picker integration, custom map annotations, and a task completion tracking system."
+     stack="Swift, UIKit, PHPickerViewController, MapKit, CoreLocation, URLSession"
+   />
+   <ProjectCard
+     logo="/src/assets/OdinRecipesImg.png"
+     project="BeReal Clone App"
+     source="Personal"
+     description="Developed an iOS clone of the BeReal app that allows users to capture and upload photos using the back camera or from their photo library. 
+     The app implements unique functionality where users can only view others' posts after uploading their own photo within a 24-hour window. 
+     Posts include a comment section with usernames, timestamps, and location metadata. 
+     Implemented notifications to remind users to post, and leveraged server-side persistence for photo uploads and post retrieval."
+     stack="Swift, UIImagePickerController, Parse-Swift, Local Notifications, CoreLocation"
+   />
+   <ProjectCard
+     logo="/src/assets/OdinRecipesImg.png"
+     project="Adventure Journal"
+     source="Personal"
+     description="Adventure Journal is a web app where users can post their personal challenges and achievements, such as fitness goals, travel experiences, or academic accomplishments. 
+     Other users can follow these journeys, leave comments, and take on the same challenges by clicking the 'Challenge Myself' button. 
+     The app also allows users to track their progress, share proof (photos, videos), and interact with a supportive community."
+     stack="React, Supabase, CSS, HTML, JavaScript"
+   />
+   <ProjectCard
+     logo="/src/assets/OdinRecipesImg.png"
+     project="Peer-to-Peer File Sharing"
+     source="Academic"
+     description="This project is a simple peer-to-peer (P2P) file-sharing system designed to allow multiple clients to share and download files from each other. 
+     The system includes a central server that maintains a list of shared files and their distribution across peers. 
+     Files are broken into chunks, which are downloaded simultaneously from different peers to maximize download speed. 
+     The project also includes an integrity check using hash functions to ensure the correctness of downloaded files."
+     stack="Python, Socket Programming, Multithreading, Hash Functions"
+   />
    <h2 id="contact" className={styles.sectionTitle}>
      Contact
    </h2>
@@ -195,16 +257,22 @@ const Content = ({ onEject }) => (
 
 
 const NoSignal = ({ onInsertTape }) => {
-  //const navigate = useNavigate();
-
   const handleInsertTape = () => {
     onInsertTape();
-    //navigate('/', { replace: true });
   };
+
+  useEffect(() => {
+    const glitchEffect = PowerGlitch.glitch('body');
+
+    return () => {
+      glitchEffect.stopGlitch();
+    };
+  }, []);
 
   return (
     <div
       style={{
+        fontFamily: 'VCR, monospace',
         backgroundColor: 'black',
         color: 'white',
         height: '100vh',
@@ -224,6 +292,8 @@ const NoSignal = ({ onInsertTape }) => {
     </div>
   );
 };
+
+export default NoSignal;
 
 
 const App = () => {
@@ -268,7 +338,6 @@ const App = () => {
     setIsEjected(false);
     audio.cloneNode(true).play();
     setTimeout(() => {
-      // Instead of reloading, navigate to the home route
       window.location.href = '/';
     }, 1000);
   };
@@ -292,7 +361,6 @@ const currentPath = window.location.pathname;
 
 if (!REDUCE_MOTION && currentPath === '/') {
   // Only show the intro screen if the path is '/'
-
   // Check if the timer element already exists
   let timer = document.getElementById('timer');
   if (!timer) {
@@ -321,6 +389,8 @@ if (!REDUCE_MOTION && currentPath === '/') {
     }
     glitch0.stopGlitch();
   }, 1000);
+
+  document.getElementById('vcr').classList.add('font-mono');
 
   const start = () => {
     if (init) return;

@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Temporarily replace the 'VCR' font with a fallback font */
 @font-face {
   font-family: 'VCR';
-  src: local('Courier New'), local('Courier'), monospace;
+  src: url('/vcr.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
