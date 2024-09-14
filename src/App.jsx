@@ -1,27 +1,15 @@
-// src/App.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './styles/App.css';
-import VHSIntro from './components/VHSIntro';
-import Home from './components/Home';
-import NotFound from './components/NotFound';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Content from './components/Content';
+import NoSignal from './components/NoSignal';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
-
   return (
-    <>
-      {showIntro ? (
-        <VHSIntro onEnd={() => setShowIntro(false)} />
-      ) : (
-        <Router>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route component={NotFound} />
-          </Switch>
-        </Router>
-      )}
-    </>
+    <Routes>
+      <Route path="/" element={<Content />} />
+      <Route path="*" element={<NoSignal />} />
+    </Routes>
   );
 }
 

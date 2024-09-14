@@ -1,29 +1,44 @@
 .navbar-container {
   width: 100%;
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 3rem 8rem; 
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 8rem;
   box-sizing: border-box;
-  //border: 10px;
-  //border-color: black;
-  //border-style: solid;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: all 0.3s ease;
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
 
   @media (max-width: 768px) {
-    flex-direction: column; // Stack items vertically on small screens
+    flex-direction: column;
     align-items: center;
     padding: 1rem 0;
   }
 
-  .space-invaders-gif {
-    width: 40px; 
-    height: auto;
-    margin-right: 1rem; 
+  .left-section {
+    display: flex;
+    align-items: center;
 
-    @media (max-width: 768px) {
-      margin-right: 0;
-      margin-bottom: 1rem; // Add space below the gif on small screens
+    .space-invaders-gif {
+      width: 40px;
+      height: auto;
+      margin-right: 1rem;
+
+      @media (max-width: 768px) {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
     }
+    /*
+    .eject-button {
+    }
+    */
   }
 
   .navbar {
@@ -35,13 +50,14 @@
 
     @media (max-width: 768px) {
       font-size: 1em;
-      margin-top: 1rem; // Add some space above the navbar on small screens
+      margin-top: 1rem;
     }
 
     a {
       position: relative;
       text-decoration: none;
       color: #2d2b2f;
+      cursor: pointer;
 
       &:after {
         display: block;
@@ -65,4 +81,3 @@
     }
   }
 }
-  
