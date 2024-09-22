@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Navbar.module.scss';
-import spaceInvadersGif from '../assets/spaceinvadersgif.gif';
+import spaceInvadersGif from '/assets/spaceinvadersgif.gif';
 
 const Navbar = ({ onEject }) => {
   const [isSticky, setIsSticky] = useState(false);

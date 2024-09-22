@@ -121,7 +121,7 @@ const EjectScreen = ({ onRewind }) => {
     overflow: 'hidden' }}>
      <AnimatedBackground />
      <img
-       src="/src/assets/spaceinvaders2.gif"
+       src="/assets/spaceinvaders2.gif"
        alt="Space Invader"
        style={{
          position: 'absolute',
@@ -158,7 +158,7 @@ const Content = ({ onEject }) => (
      description="Designed and deployed a shared Redis-based caching solution for Bleacher Report's web application, enhancing server-side rendering performance and cutting storage needs by up to 90%.
      Worked closely with DevOps, engineering teams, and key stakeholders to design and optimize the architecture of the Bleacher Report web application, leveraging technologies like Next.js, Apollo GraphQL, and Docker.
      Contributed to the front-end development of Bleacher Report 2.0, integrating betting features using Next.js, TypeScript, and Storybook, and conducted performance testing with k6 to ensure application reliability."
-     logo="/src/assets/wbdlogo.png"
+     logo="/assets/wbdlogo.png"
      companyLink="https://www.wbd.com/"
    />
    <Wexperience
@@ -168,7 +168,7 @@ const Content = ({ onEject }) => (
      description="Tutored 20+ students in JavaScript and Python.
      Demonstrated knowledge in both front-end and back-end technologies to provide comprehensive instruction.
      Leveraged strong communication and teaching skills to break down complex concepts for diverse learners."
-     logo="/src/assets/355CodeLogo.png"
+     logo="/assets/355CodeLogo.png"
      companyLink="https://www.355code.com/"
    />
    <Wexperience
@@ -178,14 +178,14 @@ const Content = ({ onEject }) => (
      description="Selected as one of 31 participants to participate in a week-long summit.
      Attended a week of technical workshops on Web, Full-Stack, and Mobile Development using Git, React, SQL, APIs, AR (Snapchat Lens Studio), Swift, and more.
      Finished 2nd place at the Summit hackathon where I worked in a group of four to create an application with the theme of 'Changing banking for good.'"
-     logo="/src/assets/CapitalOneLogo.jpg"
+     logo="/assets/CapitalOneLogo.jpg"
      companyLink="https://www.capitalone.com/about/corporate-information/our-company/"
    />
    <h2 id="projects" className={styles.sectionTitle}>
      Projects
    </h2>
    <ProjectCard
-     logo="/src/assets/RenaissanceSky.jpg"
+     logo="/assets/RenaissanceSky.jpg"
      project="Art Explorer App"
      source="Personal"
      description="Developed an iOS app using SwiftUI that allows users to explore artworks from the Harvard Art Museums API. 
@@ -196,7 +196,7 @@ const Content = ({ onEject }) => (
      githubLink="https://github.com/allenocvb/ArtExplorer"
    />
    <ProjectCard
-     logo="/src/assets/P2PIMG.png"
+     logo="/assets/P2PIMG.png"
      project="Peer-to-Peer File Sharing"
      source="Academic"
      availability="Code upon request(Academic)"
@@ -207,7 +207,7 @@ const Content = ({ onEject }) => (
      stack="Python, Socket Programming, Multithreading, Hash Functions"
    />
    <ProjectCard
-     logo="/src/assets/HornetInvasionImg.png"
+     logo="/assets/HornetInvasionImg.png"
      project="Hornet Invasion(Space Invaders)"
      source="Personal"
      description="Recreated the classic Space Alien game by replacing the original elements with an exterminator and bugs.
@@ -216,7 +216,7 @@ const Content = ({ onEject }) => (
      githubLink="https://github.com/allenocvb/Hornet-Invasion-Space-invaders-"
    />
     <ProjectCard
-     logo="/src/assets/BeRealIMG.png"
+     logo="/assets/BeRealIMG.png"
      project="BeReal Clone App"
      source="Academic"
      description="Developed an iOS clone of the BeReal app that allows users to select and upload photos from their photo library. 
@@ -227,7 +227,7 @@ const Content = ({ onEject }) => (
      githubLink="https://github.com/allenocvb/BeRealPart2"
    />
    <ProjectCard
-     logo="/src/assets/OdinRecipesImg.png"
+     logo="/assets/OdinRecipesImg.png"
      project="One Piece Recipes Site"
      source="Personal"
      description="This website is was my very first HTML/CSS project, marking my introduction to web development.
@@ -237,7 +237,7 @@ const Content = ({ onEject }) => (
      githubLink="https://github.com/allenocvb/odinrecipes"
    />
    <ProjectCard
-     logo="/src/assets/TaskIMG.png"
+     logo="/assets/TaskIMG.png"
      project="Scavenger/Task Hunt App"
      source="Personal/Academic"
      description="Built an iOS scavenger hunt app where users complete tasks by attaching photos from their library or camera. 
@@ -248,7 +248,7 @@ const Content = ({ onEject }) => (
      githubLink="https://github.com/allenocvb/scavengerHunt"
    />
    <ProjectCard
-     logo="/src/assets/Placeholder.png"
+     logo="/assets/Placeholder.png"
      project="Adventure Journal"
      source="Personal"
      availability="Code upon request(In progress)"
@@ -258,7 +258,7 @@ const Content = ({ onEject }) => (
      stack="React, Supabase, CSS, HTML, JavaScript"
    />
    <ProjectCard
-     logo="/src/assets/CMPSC221.png"
+     logo="/assets/CMPSC221.png"
      project="Course Scheduler"
      source="Academic"
      availability="Code upon request(Academic)"
