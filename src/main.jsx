@@ -237,15 +237,15 @@ const Content = ({ onEject }) => (
      githubLink="https://github.com/allenocvb/odinrecipes"
    />
    <ProjectCard
-     logo="/src/assets/Placeholder.png"
-     project="Scavenger Hunt App"
-     source="Personal"
-     availability="Code upon request(Refactoring)"
+     logo="/src/assets/TaskIMG.png"
+     project="Scavenger/Task Hunt App"
+     source="Personal/Academic"
      description="Built an iOS scavenger hunt app where users complete tasks by attaching photos from their library or camera. 
      Each task includes a title, description, and completion status, with a map displaying the location where the photo was taken. 
      Users can view a list of tasks, mark them as completed by attaching a photo, and see custom map annotations for the task location. 
      Implemented photo picker integration, custom map annotations, and a task completion tracking system."
      stack="Swift, UIKit, PHPickerViewController, MapKit, CoreLocation, URLSession"
+     githubLink="https://github.com/allenocvb/scavengerHunt"
    />
    <ProjectCard
      logo="/src/assets/Placeholder.png"

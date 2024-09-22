@@ -84,6 +84,24 @@
       margin-bottom: 20px;
     }
   }
+
+  .heroMessage {
+    align-self: flex-start;
+    font-family: 'Camphor', 'Open Sans', 'Segoe UI', sans-serif;
+    font-weight: 200;
+    font-size: 0.9em;
+    line-height: 30px;
+    font-style: italic;
+    color: #888888;
+    margin-bottom: 10px;
+    
+
+    @media (max-width: 768px) {
+      font-size: 1em;
+      line-height: 25px;
+      margin-bottom: 20px;
+    }
+  }
 }
   
   

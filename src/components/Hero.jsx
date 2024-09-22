@@ -23,6 +23,12 @@ const Hero = () => (
       I am a College student and Software Engineer. I have a passion for learning, building beautiful user experiences, and giving back to communities.
 
       Check out my <Scrollchor to="#projects">side-projects</Scrollchor> below.
+
+      <p className={styles.heroMessage}>
+        <em>
+        Can click on project image to see github!
+        </em>
+    </p>
     </div>
     {/* Add the new italic text here */}
     <p className={styles.heroNote}>
