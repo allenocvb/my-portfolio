@@ -5,13 +5,30 @@ export default function Wexperience(props) {
   return (
     <div className={styles.experienceCard}>
       <div className={styles.experienceContent}>
-        <div className={styles.imageContainer}>
-          <img
-            src={props.logo}
-            alt={`${props.company} logo`}
-            className={styles.companyLogo}
-          />
-        </div>
+        {props.companyLink ? (
+          <a
+            href={props.companyLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.imageLink}
+          >
+            <div className={styles.imageContainer}>
+              <img
+                src={props.logo}
+                alt={`${props.company} logo`}
+                className={styles.companyLogo}
+              />
+            </div>
+          </a>
+        ) : (
+          <div className={styles.imageContainer}>
+            <img
+              src={props.logo}
+              alt={`${props.company} logo`}
+              className={styles.companyLogo}
+            />
+          </div>
+        )}
         <div className={styles.detailsContainer}>
           <h3 className={styles.companyName}>{props.company}</h3>
           <h4 className={styles.jobTitle}>{props.title}</h4>

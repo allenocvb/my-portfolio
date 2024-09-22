@@ -29,14 +29,26 @@
   .imageContainer {
     flex: 0 0 180px;
     margin-right: 20px;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
   }
   
   .projectLogo {
     width: 100%;
-    height: auto;
-    max-width: 180px;
-    //border-radius: 7px;
-    //border: 2px solid #004AAD;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .projectLogo:hover {
+    transform: scale(1.05); 
+  }
+
+  .availability {
+    font-style: italic;
+    margin-top: 5px;
+    color: #8c6d6d; 
   }
   
   .detailsContainer {

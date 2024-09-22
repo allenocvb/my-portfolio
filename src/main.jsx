@@ -159,6 +159,7 @@ const Content = ({ onEject }) => (
      Worked closely with DevOps, engineering teams, and key stakeholders to design and optimize the architecture of the Bleacher Report web application, leveraging technologies like Next.js, Apollo GraphQL, and Docker.
      Contributed to the front-end development of Bleacher Report 2.0, integrating betting features using Next.js, TypeScript, and Storybook, and conducted performance testing with k6 to ensure application reliability."
      logo="/src/assets/wbdlogo.png"
+     companyLink="https://www.wbd.com/"
    />
    <Wexperience
      title="Computer Science Instructor"
@@ -168,6 +169,7 @@ const Content = ({ onEject }) => (
      Demonstrated knowledge in both front-end and back-end technologies to provide comprehensive instruction.
      Leveraged strong communication and teaching skills to break down complex concepts for diverse learners."
      logo="/src/assets/355CodeLogo.png"
+     companyLink="https://www.355code.com/"
    />
    <Wexperience
      title="Summiteer"
@@ -177,10 +179,33 @@ const Content = ({ onEject }) => (
      Attended a week of technical workshops on Web, Full-Stack, and Mobile Development using Git, React, SQL, APIs, AR (Snapchat Lens Studio), Swift, and more.
      Finished 2nd place at the Summit hackathon where I worked in a group of four to create an application with the theme of 'Changing banking for good.'"
      logo="/src/assets/CapitalOneLogo.jpg"
+     companyLink="https://www.capitalone.com/about/corporate-information/our-company/"
    />
    <h2 id="projects" className={styles.sectionTitle}>
      Projects
    </h2>
+   <ProjectCard
+     logo="/src/assets/RenaissanceSky.jpg"
+     project="Art Explorer App"
+     source="Personal"
+     description="Developed an iOS app using SwiftUI that allows users to explore artworks from the Harvard Art Museums API. 
+     The app enables users to browse artworks filtered by artist, medium, and period. 
+     Each artwork includes a detailed view with an image, description, and artist information. 
+     Implemented search functionality and asynchronous image loading to enhance user experience."
+     stack="SwiftUI, Harvard Art Museums API, URLSession, AsyncImage, JSON Parsing, MapKit"
+     githubLink="https://github.com/allenocvb/ArtExplorer"
+   />
+   <ProjectCard
+     logo="/src/assets/P2PIMG.png"
+     project="Peer-to-Peer File Sharing"
+     source="Academic"
+     availability="Code upon request(Academic)"
+     description="This project is a peer-to-peer (P2P) file-sharing system designed to allow multiple clients to share and download files from each other. 
+     The system includes a central server that maintains a list of shared files and their distribution across peers. 
+     Files are broken into chunks, which are downloaded simultaneously from different peers to maximize download speed. 
+     The project also includes an integrity check using hash functions to ensure the correctness of downloaded files."
+     stack="Python, Socket Programming, Multithreading, Hash Functions"
+   />
    <ProjectCard
      logo="/src/assets/HornetInvasionImg.png"
      project="Hornet Invasion(Space Invaders)"
@@ -188,6 +213,18 @@ const Content = ({ onEject }) => (
      description="Recreated the classic Space Alien game by replacing the original elements with an exterminator and bugs.
      Developed a 2D game using pygame, a powerful Python library, incorporating user input, key presses, and mouse-click functionality."
      stack="Python, CSS, Pygame"
+     githubLink="https://github.com/allenocvb/Hornet-Invasion-Space-invaders-"
+   />
+    <ProjectCard
+     logo="/src/assets/BeRealIMG.png"
+     project="BeReal Clone App"
+     source="Academic"
+     description="Developed an iOS clone of the BeReal app that allows users to select and upload photos from their photo library. 
+     Implemented user authentication and persistence using Parse Swift SDK with Back4App as the backend. 
+     The app features a unique functionality where users can only view others' posts after uploading their own photo within a 24-hour window.
+      Posts include captions, usernames, and timestamps. Utilized a custom Parse object for efficient server-side persistence of photo uploads and post retrieval."
+     stack="Swift, UIKit, Parse Swift SDK, Back4App, PhotosUI, AlamofireImage"
+     githubLink="https://github.com/allenocvb/BeRealPart2"
    />
    <ProjectCard
      logo="/src/assets/OdinRecipesImg.png"
@@ -197,21 +234,13 @@ const Content = ({ onEject }) => (
      It features a collection of recipes inspired by the One Piece anime, including:
      Marine Captain's Curry, Sanji's Risotto, Franky Cola, Elbaf Semla, Tony Tony Chopper's Cotton Candy, and Oden."
      stack="HTML, CSS"
+     githubLink="https://github.com/allenocvb/odinrecipes"
    />
    <ProjectCard
-     logo="/src/assets/OdinRecipesImg.png"
-     project="Art Explorer App"
-     source="Personal"
-     description="Developed an iOS app using SwiftUI that allows users to explore artworks from the Harvard Art Museums API. 
-     The app enables users to browse artworks filtered by artist, medium, and period. 
-     Each artwork includes a detailed view with an image, description, and artist information. 
-     Implemented search functionality and asynchronous image loading to enhance user experience."
-     stack="SwiftUI, Harvard Art Museums API, URLSession, AsyncImage, JSON Parsing"
-   />
-   <ProjectCard
-     logo="/src/assets/OdinRecipesImg.png"
+     logo="/src/assets/Placeholder.png"
      project="Scavenger Hunt App"
      source="Personal"
+     availability="Code upon request(Refactoring)"
      description="Built an iOS scavenger hunt app where users complete tasks by attaching photos from their library or camera. 
      Each task includes a title, description, and completion status, with a map displaying the location where the photo was taken. 
      Users can view a list of tasks, mark them as completed by attaching a photo, and see custom map annotations for the task location. 
@@ -219,33 +248,25 @@ const Content = ({ onEject }) => (
      stack="Swift, UIKit, PHPickerViewController, MapKit, CoreLocation, URLSession"
    />
    <ProjectCard
-     logo="/src/assets/OdinRecipesImg.png"
-     project="BeReal Clone App"
-     source="Personal"
-     description="Developed an iOS clone of the BeReal app that allows users to capture and upload photos using the back camera or from their photo library. 
-     The app implements unique functionality where users can only view others' posts after uploading their own photo within a 24-hour window. 
-     Posts include a comment section with usernames, timestamps, and location metadata. 
-     Implemented notifications to remind users to post, and leveraged server-side persistence for photo uploads and post retrieval."
-     stack="Swift, UIImagePickerController, Parse-Swift, Local Notifications, CoreLocation"
-   />
-   <ProjectCard
-     logo="/src/assets/OdinRecipesImg.png"
+     logo="/src/assets/Placeholder.png"
      project="Adventure Journal"
      source="Personal"
+     availability="Code upon request(In progress)"
      description="Adventure Journal is a web app where users can post their personal challenges and achievements, such as fitness goals, travel experiences, or academic accomplishments. 
      Other users can follow these journeys, leave comments, and take on the same challenges by clicking the 'Challenge Myself' button. 
      The app also allows users to track their progress, share proof (photos, videos), and interact with a supportive community."
      stack="React, Supabase, CSS, HTML, JavaScript"
    />
    <ProjectCard
-     logo="/src/assets/OdinRecipesImg.png"
-     project="Peer-to-Peer File Sharing"
+     logo="/src/assets/CMPSC221.png"
+     project="Course Scheduler"
      source="Academic"
-     description="This project is a simple peer-to-peer (P2P) file-sharing system designed to allow multiple clients to share and download files from each other. 
-     The system includes a central server that maintains a list of shared files and their distribution across peers. 
-     Files are broken into chunks, which are downloaded simultaneously from different peers to maximize download speed. 
-     The project also includes an integrity check using hash functions to ensure the correctness of downloaded files."
-     stack="Python, Socket Programming, Multithreading, Hash Functions"
+     availability="Code upon request(Academic)"
+     description="Developed a comprehensive College Course Scheduling application as part of an Object Oriented Programming course. 
+     This multi-semester scheduler features separate admin and student panels, allowing for efficient course management and student registration. 
+     Leveraged Java and SQL expertise to implement admin functions for adding semesters, courses, and students to the Derby database, while also creating a student interface for adding or dropping courses. 
+     The project showcases proficiency in OOP principles, database management, and GUI design through the implementation of efficient SQL queries and a user-friendly interface built with SwingGUI."
+     stack="Java, SQL, Derby Database, SwingGUI"
    />
    <h2 id="contact" className={styles.sectionTitle}>
      Contact
