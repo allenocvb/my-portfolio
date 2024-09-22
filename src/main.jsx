@@ -137,7 +137,7 @@ const EjectScreen = ({ onRewind }) => {
      <p style={{ fontSize: '24px', textAlign: 'center', maxWidth: '80%', marginBottom: '20px', zIndex: 2 }}>
      "Begin doing what you want to do now. We are not living in eternity. We have only this moment, sparkling like a star in our hand—and melting like a snowflake." — Francis Bacon
      </p>
-     <button onClick={onRewind} style={{ padding: '10px 20px', fontSize: '18px', cursor: 'pointer', zIndex: 2 }}>Rewind(Click)</button>
+     <button onClick={onRewind} style={{ padding: '10px 20px', fontSize: '18px', cursor: 'pointer', zIndex: 2 }}>Rewind►</button>
    </div>
  );
 };
