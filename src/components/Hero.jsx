@@ -20,7 +20,7 @@ const Hero = () => (
       initDelay={700}
     />
     <div className={styles.heroDescription}>
-      I am a College student and Software Engineer. I have a passion for learning, building beautiful user experiences, and giving back to communities.
+      I am a college student and Software Engineer. I have a passion for learning, building beautiful user experiences, and giving back to communities.
 
       Check out my <Scrollchor to="#projects">side-projects</Scrollchor> below.
 
