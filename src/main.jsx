@@ -137,7 +137,7 @@ const EjectScreen = ({ onRewind }) => {
      <p style={{ fontSize: '24px', textAlign: 'center', maxWidth: '80%', marginBottom: '20px', zIndex: 2 }}>
      "Begin doing what you want to do now. We are not living in eternity. We have only this moment, sparkling like a star in our hand—and melting like a snowflake." — Francis Bacon
      </p>
-     <button onClick={onRewind} style={{ padding: '10px 20px', fontSize: '18px', cursor: 'pointer', zIndex: 2 }}>Rewind►</button>
+     <button onClick={onRewind} className="px-5 py-2.5 text-lg cursor-pointer z-10 hover:underline">Rewind ⏮</button>
    </div>
  );
 };
@@ -189,7 +189,7 @@ const Content = ({ onEject }) => (
      project="Art Explorer App"
      source="Personal"
      description="Developed an iOS app using SwiftUI that allows users to explore artworks from the Harvard Art Museums API. 
-     The app enables users to browse artworks filtered by artist, medium, and period. 
+     The app enables users to browse artworks filtered by culture, artist, medium, and period. 
      Each artwork includes a detailed view with an image, description, and artist information. 
      Implemented search functionality and asynchronous image loading to enhance user experience."
      stack="SwiftUI, Harvard Art Museums API, URLSession, AsyncImage, JSON Parsing, MapKit"
