@@ -15,7 +15,7 @@ export default [
     },
     {
       input: 'Allen.hobbies',
-      return: '["coding", "basketball", "gaming", "travelling", "weightlifting", "gardening"]',
+      return: '["coding", "basketball", "gaming", "traveling", "weightlifting", "gardening"]',
     },
     {
       input: 'Allen.education',
@@ -30,7 +30,7 @@ export default [
     {
         input: 'Allen.Frameworks/Libraries',
         return:
-            '["Next.js", "NumPy", "pandas", "Flask", "Django", "React", "React Native", "Express", "GraphQL"]'
+            '["Next.js", "NumPy", "Pandas", "Flask", "Django", "React", "React Native", "Express", "GraphQL"]'
     },
     {
         input: 'Allen.Technologies',

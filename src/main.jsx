@@ -153,9 +153,17 @@ const Content = ({ onEject }) => (
    </h2>
    <Wexperience
      title="Software Engineer Intern"
+     company="Pinterest"
+     timeframe="May 2025 -"
+     description="Incoming SWE (Mobile focus) Intern for Pinterest"
+     logo="/assets/pinterest-logo.png"
+     companyLink="https://www.pinterestcareers.com/"
+   />
+   <Wexperience
+     title="Software Engineer Intern"
      company="Warner Bros Discovery"
      timeframe="June 2024 - August 2024"
-     description="Designed and deployed a shared Redis-based caching solution for Bleacher Report's web application, enhancing server-side rendering performance and cutting storage needs by up to 90%.
+     description="Designed a shared Redis-based caching solution for Bleacher Report's web application, enhancing server-side rendering performance and cutting storage needs by up to 90%.
      Worked closely with DevOps, engineering teams, and key stakeholders to design and optimize the architecture of the Bleacher Report web application, leveraging technologies like Next.js, Apollo GraphQL, and Docker.
      Contributed to the front-end development of Bleacher Report 2.0, integrating betting features using Next.js, TypeScript, and Storybook, and conducted performance testing with k6 to ensure application reliability."
      logo="/assets/wbdlogo.png"
@@ -230,7 +238,7 @@ const Content = ({ onEject }) => (
      logo="/assets/OdinRecipesImg.png"
      project="One Piece Recipes Site"
      source="Personal"
-     description="This website is was my very first HTML/CSS project, marking my introduction to web development.
+     description="This website was my very first HTML/CSS project, marking my introduction to web development.
      It features a collection of recipes inspired by the One Piece anime, including:
      Marine Captain's Curry, Sanji's Risotto, Franky Cola, Elbaf Semla, Tony Tony Chopper's Cotton Candy, and Oden."
      stack="HTML, CSS"
@@ -258,15 +266,14 @@ const Content = ({ onEject }) => (
      stack="React, Supabase, CSS, HTML, JavaScript"
    />
    <ProjectCard
-     logo="/assets/CMPSC221.png"
-     project="Course Scheduler"
+     logo="/assets/B2bMarketplace.png"
+     project="B2B Marketplace Website"
      source="Academic"
      availability="Code upon request(Academic)"
-     description="Developed a comprehensive College Course Scheduling application as part of an Object Oriented Programming course. 
-     This multi-semester scheduler features separate admin and student panels, allowing for efficient course management and student registration. 
-     Leveraged Java and SQL expertise to implement admin functions for adding semesters, courses, and students to the Derby database, while also creating a student interface for adding or dropping courses. 
-     The project showcases proficiency in OOP principles, database management, and GUI design through the implementation of efficient SQL queries and a user-friendly interface built with SwingGUI."
-     stack="Java, SQL, Derby Database, SwingGUI"
+     description="Developed a comprehensive B2B e-commerce marketplace with Django that connects businesses with suppliers for a capstone project. 
+     Implemented role-based access control with custom authentication, a category hierarchy system for product browsing, and an interactive shopping cart with checkout functionality. 
+     Created an admin dashboard for helpdesk staff featuring market analytics and a support request management system, along with an automated seller rating system that updates based on customer reviews."
+     stack="Python, Django, SQLite, JavaScript, TailwindCSS, HTML, CSS, AJAX"
    />
    <h2 id="contact" className={styles.sectionTitle}>
      Contact
