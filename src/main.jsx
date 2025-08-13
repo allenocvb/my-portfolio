@@ -154,8 +154,10 @@ const Content = ({ onEject }) => (
    <Wexperience
      title="Software Engineer Intern"
      company="Pinterest"
-     timeframe="May 2025 -"
-     description="Incoming SWE (Mobile focus) Intern for Pinterest"
+     timeframe="May 2025 - August 2025"
+     description="Architected and shipped a discovery module on Home Feed, integrating user interest vectors and topic extraction services to enable serendipitous content exploration for millions of Pinners. 
+     Designed and executed A/B experiments for Shopping Modules across 5 copy variants, collaborating with product/design teams. 
+     Improved reliability and data integrity of a core API serving 170M+ requests by adding strict request parameter validation, eliminating invalid requests in production and reducing 3,000+ malformed requests daily."
      logo="/assets/pinterest-logo.png"
      companyLink="https://www.pinterestcareers.com/"
    />
