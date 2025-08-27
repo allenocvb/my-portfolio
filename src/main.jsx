@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -437,9 +438,12 @@ if (!REDUCE_MOTION && currentPath === '/') {
       glitch2.stopGlitch();
       vcr.style.display = 'none';
       root.render(
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <>
+          <BrowserRouter>
+            <Analytics />
+            <App />
+          </BrowserRouter>
+        </>
       );
     }, 1000);
   };
@@ -449,9 +453,12 @@ if (!REDUCE_MOTION && currentPath === '/') {
   // Skip the intro screen for any other path
   vcr.style.display = 'none';
   root.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Analytics />
+        <App />
+      </BrowserRouter>
+    </>
   );
   document.body.style.overflow = 'auto';
 }
