@@ -6,11 +6,15 @@
   padding: 2rem;
   background-color: #dfdfe6;
   border-radius: 30px;
-  box-shadow: 0 50px 100px rgba(50, 50, 93, 0.05),
-    0 15px 35px rgba(87, 87, 105, 0.1), 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow:
+    0 50px 100px rgba(50, 50, 93, 0.05),
+    0 15px 35px rgba(87, 87, 105, 0.1),
+    0 5px 15px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   max-width: 900px;
-  width: calc(100% - 40px); // Subtract 40px to ensure there's always some space on the sides
+  width: calc(
+    100% - 40px
+  ); // Subtract 40px to ensure there's always some space on the sides
   box-sizing: border-box;
 }
 
@@ -95,6 +99,3 @@
     padding: 15px; // Reduce padding on smaller screens
   }
 }
-
-  
-  

@@ -25,12 +25,12 @@
 
   .heroTitle {
     align-self: flex-start;
-    font-family: 'Monaco', Consolas, 'Lucida Console', monospace;
+    font-family: "Monaco", Consolas, "Lucida Console", monospace;
     font-size: 4.5em;
     color: #2d2b2f;
 
     &:before {
-      content: '>\a0';
+      content: ">\a0";
     }
 
     span {
@@ -51,7 +51,7 @@
 
   .heroDescription {
     align-self: flex-start;
-    font-family: 'Camphor', 'Open Sans', 'Segoe UI', sans-serif;
+    font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
     font-weight: 200;
     font-size: 1.3em;
     line-height: 40px;
@@ -68,13 +68,13 @@
 
   .heroNote {
     align-self: flex-start;
-    font-family: 'Camphor', 'Open Sans', 'Segoe UI', sans-serif;
+    font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
     font-style: italic;
     font-weight: 200;
     font-size: 1.1em;
     line-height: 30px;
     color: #888888;
-    margin-top: -30px; 
+    margin-top: -30px;
     margin-bottom: 50px;
 
     @media (max-width: 768px) {
@@ -87,14 +87,13 @@
 
   .heroMessage {
     align-self: flex-start;
-    font-family: 'Camphor', 'Open Sans', 'Segoe UI', sans-serif;
+    font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
     font-weight: 200;
     font-size: 0.9em;
     line-height: 30px;
     font-style: italic;
     color: #7b4ea2;
     margin-bottom: 10px;
-    
 
     @media (max-width: 768px) {
       font-size: 1em;
@@ -103,7 +102,3 @@
     }
   }
 }
-  
-  
-  
-  

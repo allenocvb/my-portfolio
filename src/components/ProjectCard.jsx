@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './ProjectCard.module.scss';
+import React from "react";
+import styles from "./ProjectCard.module.scss";
 
 export default function ProjectCard(props) {
   return (

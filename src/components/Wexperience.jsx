@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './Wexperience.module.scss';
+import React from "react";
+import styles from "./Wexperience.module.scss";
 
 export default function Wexperience(props) {
   return (

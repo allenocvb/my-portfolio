@@ -3,21 +3,20 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'VCR';
-  src: url('/vcr.ttf') format('truetype');
+  font-family: "VCR";
+  src: url("/vcr.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 :root {
-  font-family: 'Lora', serif;
+  font-family: "Lora", serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  ;
 }
 
 * {
@@ -72,4 +71,3 @@ strike {
     transform: rotate(360deg);
   }
 }
-

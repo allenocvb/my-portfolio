@@ -1,18 +1,18 @@
-import React from 'react';
+import React from "react";
 
 class Typewriter extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: '',
+      text: "",
     };
   }
 
   typeOutText(text, minSpeed, maxSpeed, delay) {
-    let currentText = '';
+    let currentText = "";
     let typingSpeed = 0;
 
-    text.split('').forEach((char) => {
+    text.split("").forEach((char) => {
       typingSpeed += Math.random() * (maxSpeed - minSpeed) + minSpeed;
       setTimeout(() => {
         currentText += char;
@@ -22,7 +22,12 @@ class Typewriter extends React.Component {
   }
 
   componentDidMount() {
-    this.typeOutText(this.props.text, this.props.minSpeed, this.props.maxSpeed, this.props.delay);
+    this.typeOutText(
+      this.props.text,
+      this.props.minSpeed,
+      this.props.maxSpeed,
+      this.props.delay,
+    );
   }
 
   render() {
@@ -36,7 +41,7 @@ class Typewriter extends React.Component {
 }
 
 Typewriter.defaultProps = {
-  text: 'Your Name',
+  text: "Your Name",
   minSpeed: 50,
   maxSpeed: 90,
   delay: 700,

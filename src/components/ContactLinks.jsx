@@ -1,11 +1,15 @@
-import React from 'react';
-import styles from './ContactLinks.module.scss';
+import React from "react";
+import styles from "./ContactLinks.module.scss";
 
 const ContactLinks = () => {
   return (
     <div className={styles.contactLinks}>
       <span>
-        <a rel="noopener noreferrer" target="_blank" href="mailto:aodoom04@gmail.com">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="mailto:aodoom04@gmail.com"
+        >
           aodoom04@gmail.com
         </a>
       </span>
@@ -19,7 +23,11 @@ const ContactLinks = () => {
         </a>
       </span>
       <span>
-        <a rel="noopener noreferrer" target="_blank" href="https://github.com/allenocvb">
+        <a
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://github.com/allenocvb"
+        >
           GitHub
         </a>
       </span>

@@ -1,12 +1,12 @@
-import React from 'react';
-import Typewriter from './Typewriter';
-import styles from './Hero.module.scss';
+import React from "react";
+import Typewriter from "./Typewriter";
+import styles from "./Hero.module.scss";
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
     } else {
       console.error(`Section with id "${sectionId}" not found`);
     }
@@ -22,17 +22,21 @@ const Hero = () => {
         initDelay={700}
       />
       <div className={styles.heroDescription}>
-        I am a college student and Software Engineer. I have a passion for learning, building beautiful user experiences, and giving back to communities. 
-        Check out my <a onClick={() => scrollToSection('projects')} style={{ cursor: 'pointer', textDecoration: 'underline' }}>side-projects</a> below.
+        I am a college student and Software Engineer. I have a passion for
+        learning, building beautiful user experiences, and giving back to
+        communities. Check out my{" "}
+        <a
+          onClick={() => scrollToSection("projects")}
+          style={{ cursor: "pointer", textDecoration: "underline" }}
+        >
+          side-projects
+        </a>{" "}
+        below.
         <p className={styles.heroMessage}>
-          <em>
-          Can click on project image to see github!
-          </em>
+          <em>Can click on project image to see github!</em>
         </p>
       </div>
-      <p className={styles.heroNote}>
-        P.S. Try ejecting the page!
-      </p>
+      <p className={styles.heroNote}>P.S. Try ejecting the page!</p>
     </div>
   );
 };

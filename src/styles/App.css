@@ -5,8 +5,8 @@
   text-align: center;
 }
 @font-face {
-  font-family: 'VCR';
-  src: url(/public/vcr.ttf) format('truetype')
+  font-family: "VCR";
+  src: url(/public/vcr.ttf) format("truetype");
 }
 .content-container {
   max-width: 1280px;

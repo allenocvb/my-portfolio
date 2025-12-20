@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './About.module.scss';
+import React from "react";
+import styles from "./About.module.scss";
 
 class About extends React.PureComponent {
   render() {
@@ -41,7 +41,9 @@ class Statement extends React.PureComponent {
   render() {
     return (
       <div className={styles.statement}>
-        <div className={styles.inputStatement}>{this.props.statement.input}</div>
+        <div className={styles.inputStatement}>
+          {this.props.statement.input}
+        </div>
         <div
           className={styles.returnStatement}
           dangerouslySetInnerHTML={{ __html: this.props.statement.return }}
