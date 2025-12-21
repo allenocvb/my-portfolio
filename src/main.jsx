@@ -174,11 +174,11 @@ const Content = ({ onEject }) => (
           title: "Software Engineer",
           previousTitle: "Intern",
           company: "Pinterest",
-          location: "Remote(NYC based)",
+          location: "Remote (NYC based)",
           previousTimeframe: "May 2025 - August 2025",
           timeframe: "Returning July 2026",
           description:
-            "SWE on the Home Feed product team. Designed and shipped a Home Feed discovery module for Pinterest mobile, leveraging user interest vectors and topic extraction services to drive serendipitous context discovery for millions of users. Worked on experiments for Shopping Modules and impoved a core API",
+            "SWE on the Home Feed product team. Designed and shipped a Home Feed discovery module for Pinterest mobile, leveraging user interest vectors and topic extraction services to drive serendipitous context discovery for millions of users. Ran experiments for Shopping Modules and improved a core API.",
           logo: "/assets/pinterest-logo.png",
           companyLink: "https://www.pinterestcareers.com/",
         },
@@ -188,7 +188,7 @@ const Content = ({ onEject }) => (
           location: "Atlanta, Georgia",
           timeframe: "June 2024 - August 2024",
           description:
-            "SWE intern on Bleacher Report Web team. Built a POC for a shared Redis caching layer for Bleacher Report, improving SSR performance and reducing storage usage by up to 90%. Contributed to Bleacher Report 2.0 using Next.js, Typescript, and GraphQL, and validated performance and reliability through k6 load testing.",
+            "SWE intern on Bleacher Report Web team. Built a POC for a shared Redis caching layer for Next.js SSR/ISR, eliminating duplicated per-instance cache data and reducing redundant storage usage by up to ~90% across the cluster. Contributed to Bleacher Report 2.0 front-end using Next.js, TypeScript, and GraphQL, and validated performance and reliability through k6 load testing.",
           logo: "/assets/wbdlogo.png",
           companyLink: "https://www.wbd.com/",
         },
@@ -198,7 +198,7 @@ const Content = ({ onEject }) => (
           location: "Remote",
           timeframe: "October 2022 - January 2024",
           description:
-            "Taught JavaScript and Python to students, covering both front-end and back-end fundamentals. Simplified complex concepts through clear explanations and hands on guidance tailored to diverse learning styles.",
+            "Taught JavaScript and Python to students, covering both front-end and back-end fundamentals. Simplified complex concepts through clear explanations and hands-on guidance tailored to diverse learning styles.",
           logo: "/assets/355CodeLogo.png",
           companyLink: "https://www.355code.com/",
         },
@@ -227,14 +227,14 @@ const Content = ({ onEject }) => (
         {
           name: "B2B Marketplace",
           description:
-            "University django e-commerce marketplace with role-based auth, product categories, shopping cart, and admin dashboard with analytics. (Academic)",
-          techStack: "Python, Django, SQLite, TailwindCSS",
+            "University Django e-commerce marketplace with role-based auth, product categories, shopping cart, and admin dashboard with analytics. (Academic)",
+          techStack: "Python, Django, SQLite, Tailwind CSS",
           image: "/assets/B2bMarketplace.png",
         },
         {
           name: "Hornet Invasion",
           description:
-            "Space Invaders remake with an exterminator vs bugs theme. Built with pygame featuring user input, key presses, and mouse-click functionality.",
+            "Space Invaders remake with an exterminator vs bugs theme. Built with Pygame featuring user input, key presses, and mouse-click functionality.",
           techStack: "Python, Pygame",
           githubLink:
             "https://github.com/allenocvb/Hornet-Invasion-Space-invaders-",

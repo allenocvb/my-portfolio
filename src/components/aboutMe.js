@@ -16,7 +16,7 @@ export default [
   {
     input: "Allen.hobbies",
     return:
-      '["coding", "basketball", "gaming", "traveling", "weightlifting", "gardening"]',
+      '["Coding", "Basketball", "Gaming", "Travel", "Weightlifting", "Gardening"]',
   },
   {
     input: "Allen.education",
@@ -25,10 +25,10 @@ export default [
   {
     input: "Allen.languages",
     return:
-      '["Python", "Swift", "Kotlin", "Typescript/JavaScript", "C++", "HTML", "CSS", "SQL"]',
+      '["Python", "Swift", "Kotlin", "TypeScript/JavaScript", "C++", "HTML", "CSS", "SQL"]',
   },
   {
-    input: "Allen.frameworks/libraries",
+    input: "Allen.frameworks_libraries",
     return:
       '["Next.js", "SwiftUI", "Jetpack Compose", "Flask", "Django", "React", "React Native", "Express", "GraphQL", "PyTorch"]',
   },
