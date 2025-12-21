@@ -11,12 +11,18 @@ class Typewriter extends React.Component {
   typeOutText(text, minSpeed, maxSpeed, delay) {
     let currentText = "";
     let typingSpeed = 0;
+    const chars = text.split("");
 
-    text.split("").forEach((char) => {
+    chars.forEach((char, index) => {
       typingSpeed += Math.random() * (maxSpeed - minSpeed) + minSpeed;
       setTimeout(() => {
         currentText += char;
         this.setState({ text: currentText });
+
+        // Call onComplete when last character is typed
+        if (index === chars.length - 1 && this.props.onComplete) {
+          this.props.onComplete();
+        }
       }, delay + typingSpeed);
     });
   }

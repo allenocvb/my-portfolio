@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Typewriter from "./Typewriter";
+import FlipImage from "./FlipImage";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {
+  const [triggerFlip, setTriggerFlip] = useState(false);
+
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -12,14 +15,27 @@ const Hero = () => {
     }
   };
 
+  const handleTypewriterComplete = () => {
+    setTriggerFlip(true);
+  };
+
   return (
     <div className={styles.heroContainer}>
+      <div className={styles.flipImageWrapper}>
+        <FlipImage
+          front="/assets/FlipedLuffy.jpeg"
+          back="/assets/MyPic.JPG"
+          alt="avatar"
+          triggerFlip={triggerFlip}
+        />
+      </div>
       <Typewriter
         className={styles.heroTitle}
         text="Allen Odoom"
         minTypeSpeed={100}
         maxTypeSpeed={150}
         initDelay={700}
+        onComplete={handleTypewriterComplete}
       />
       <div className={styles.heroDescription}>
         <p>

@@ -1,6 +1,6 @@
 .heroContainer {
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 12vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -16,17 +16,39 @@
 
   @media (max-width: 1024px) {
     padding: 0 2rem;
+    margin-top: 10vh;
   }
 
   @media (max-width: 768px) {
-    margin-top: 15vh;
+    margin-top: 6vh;
     padding: 0 1rem;
+  }
+
+  .flipImageWrapper {
+    width: 10rem;
+    height: 10rem;
+    flex-shrink: 0;
+    transform: rotate(3deg);
+    align-self: flex-end;
+    margin-bottom: -3rem;
+    margin-right: 0.5rem;
+
+    @media (max-width: 768px) {
+      width: 7rem;
+      height: 7rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 480px) {
+      width: 6rem;
+      height: 6rem;
+    }
   }
 
   .heroTitle {
     align-self: flex-start;
     font-family: "Monaco", Consolas, "Lucida Console", monospace;
-    font-size: 4.5em;
+    font-size: clamp(2rem, 8vw, 4.5rem);
     color: #2d2b2f;
 
     &:before {
@@ -36,10 +58,6 @@
     span {
       background-color: black;
       animation: caret 1s steps(1) infinite;
-    }
-
-    @media (max-width: 768px) {
-      font-size: 2.3em;
     }
 
     @keyframes caret {

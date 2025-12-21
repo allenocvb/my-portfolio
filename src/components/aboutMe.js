@@ -28,12 +28,12 @@ export default [
       '["Python", "Java", "JavaScript", "C", "C++", "Swift", "HTML", "CSS", "SQL"]',
   },
   {
-    input: "Allen.Frameworks/Libraries",
+    input: "Allen.frameworks/libraries",
     return:
       '["Next.js", "NumPy", "Pandas", "Flask", "Django", "React", "React Native", "Express", "GraphQL"]',
   },
   {
-    input: "Allen.Technologies",
+    input: "Allen.technologies",
     return: '["Docker", "K6", "Git", "AWS", "Redis"]',
   },
 ];
