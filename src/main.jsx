@@ -11,7 +11,7 @@ import { PowerGlitch } from "powerglitch";
 import styles from "./styles/SectionTitles.module.scss";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import EducationCard from "./components/EducationCard";
-import ProjectCard from "./components/ProjectCard";
+import ProjectsGrid from "./components/ProjectsGrid";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ContactLinks from "./components/ContactLinks";
 
@@ -203,88 +203,71 @@ const Content = ({ onEject }) => (
     <h2 id="projects" className={styles.sectionTitle}>
       Projects
     </h2>
-    <ProjectCard
-      logo="/assets/RenaissanceSky.jpg"
-      project="Art Explorer App"
-      source="Personal"
-      description="Developed an iOS app using SwiftUI that allows users to explore artworks from the Harvard Art Museums API.
-     The app enables users to browse artworks filtered by culture, artist, medium, and period.
-     Each artwork includes a detailed view with an image, description, and artist information.
-     Implemented search functionality and asynchronous image loading to enhance user experience."
-      stack="SwiftUI, Harvard Art Museums API, URLSession, AsyncImage, JSON Parsing, MapKit"
-      githubLink="https://github.com/allenocvb/ArtExplorer"
-    />
-    <ProjectCard
-      logo="/assets/P2PIMG.png"
-      project="Peer-to-Peer File Sharing"
-      source="Academic"
-      availability="Code upon request(Academic)"
-      description="This project is a peer-to-peer (P2P) file-sharing system designed to allow multiple clients to share and download files from each other.
-     The system includes a central server that maintains a list of shared files and their distribution across peers.
-     Files are broken into chunks, which are downloaded simultaneously from different peers to maximize download speed.
-     The project also includes an integrity check using hash functions to ensure the correctness of downloaded files."
-      stack="Python, Socket Programming, Multithreading, Hash Functions"
-    />
-    <ProjectCard
-      logo="/assets/HornetInvasionImg.png"
-      project="Hornet Invasion(Space Invaders)"
-      source="Personal"
-      description="Recreated the classic Space Alien game by replacing the original elements with an exterminator and bugs.
-     Developed a 2D game using pygame, a powerful Python library, incorporating user input, key presses, and mouse-click functionality."
-      stack="Python, CSS, Pygame"
-      githubLink="https://github.com/allenocvb/Hornet-Invasion-Space-invaders-"
-    />
-    <ProjectCard
-      logo="/assets/BeRealIMG.png"
-      project="BeReal Clone App"
-      source="Academic"
-      description="Developed an iOS clone of the BeReal app that allows users to select and upload photos from their photo library.
-     Implemented user authentication and persistence using Parse Swift SDK with Back4App as the backend.
-     The app features a unique functionality where users can only view others' posts after uploading their own photo within a 24-hour window.
-      Posts include captions, usernames, and timestamps. Utilized a custom Parse object for efficient server-side persistence of photo uploads and post retrieval."
-      stack="Swift, UIKit, Parse Swift SDK, Back4App, PhotosUI, AlamofireImage"
-      githubLink="https://github.com/allenocvb/BeRealPart2"
-    />
-    <ProjectCard
-      logo="/assets/OdinRecipesImg.png"
-      project="One Piece Recipes Site"
-      source="Personal"
-      description="This website was my very first HTML/CSS project, marking my introduction to web development.
-     It features a collection of recipes inspired by the One Piece anime, including:
-     Marine Captain's Curry, Sanji's Risotto, Franky Cola, Elbaf Semla, Tony Tony Chopper's Cotton Candy, and Oden."
-      stack="HTML, CSS"
-      githubLink="https://github.com/allenocvb/odinrecipes"
-    />
-    <ProjectCard
-      logo="/assets/TaskIMG.png"
-      project="Scavenger/Task Hunt App"
-      source="Personal/Academic"
-      description="Built an iOS scavenger hunt app where users complete tasks by attaching photos from their library or camera.
-     Each task includes a title, description, and completion status, with a map displaying the location where the photo was taken.
-     Users can view a list of tasks, mark them as completed by attaching a photo, and see custom map annotations for the task location.
-     Implemented photo picker integration, custom map annotations, and a task completion tracking system."
-      stack="Swift, UIKit, PHPickerViewController, MapKit, CoreLocation, URLSession"
-      githubLink="https://github.com/allenocvb/scavengerHunt"
-    />
-    <ProjectCard
-      logo="/assets/Placeholder.png"
-      project="Adventure Journal"
-      source="Personal"
-      availability="Code upon request(In progress)"
-      description="Adventure Journal is a web app where users can post their personal challenges and achievements, such as fitness goals, travel experiences, or academic accomplishments.
-     Other users can follow these journeys, leave comments, and take on the same challenges by clicking the 'Challenge Myself' button.
-     The app also allows users to track their progress, share proof (photos, videos), and interact with a supportive community."
-      stack="React, Supabase, CSS, HTML, JavaScript"
-    />
-    <ProjectCard
-      logo="/assets/B2bMarketplace.png"
-      project="B2B Marketplace Website"
-      source="Academic"
-      availability="Code upon request(Academic)"
-      description="Developed a comprehensive B2B e-commerce marketplace with Django that connects businesses with suppliers for a capstone project.
-     Implemented role-based access control with custom authentication, a category hierarchy system for product browsing, and an interactive shopping cart with checkout functionality.
-     Created an admin dashboard for helpdesk staff featuring market analytics and a support request management system, along with an automated seller rating system that updates based on customer reviews."
-      stack="Python, Django, SQLite, JavaScript, TailwindCSS, HTML, CSS, AJAX"
+    <ProjectsGrid
+      projects={[
+        {
+          name: "Art Explorer App",
+          description:
+            "iOS app using SwiftUI to explore artworks from the Harvard Art Museums API. Browse by culture, artist, medium, and period with search and async image loading.",
+          techStack: "SwiftUI, Harvard Art Museums API, MapKit",
+          githubLink: "https://github.com/allenocvb/ArtExplorer",
+          image: "/assets/RenaissanceSky.jpg",
+        },
+        {
+          name: "Peer-to-Peer File Sharing",
+          description:
+            "P2P file-sharing system with a central server tracking shared files. Files are chunked and downloaded from multiple peers with hash-based integrity checks.",
+          techStack: "Python, Socket Programming, Multithreading",
+          image: "/assets/P2PIMG.png",
+        },
+        {
+          name: "Hornet Invasion",
+          description:
+            "Space Invaders remake with an exterminator vs bugs theme. Built with pygame featuring user input, key presses, and mouse-click functionality.",
+          techStack: "Python, Pygame",
+          githubLink:
+            "https://github.com/allenocvb/Hornet-Invasion-Space-invaders-",
+          image: "/assets/HornetInvasionImg.png",
+        },
+        {
+          name: "BeReal Clone App",
+          description:
+            "iOS BeReal clone with photo uploads, user auth via Parse Swift SDK, and a 24-hour posting window before viewing others' posts.",
+          techStack: "Swift, UIKit, Parse SDK, Back4App",
+          githubLink: "https://github.com/allenocvb/BeRealPart2",
+          image: "/assets/BeRealIMG.png",
+        },
+        {
+          name: "One Piece Recipes Site",
+          description:
+            "My first HTML/CSS project featuring anime-inspired recipes: Marine Captain's Curry, Sanji's Risotto, Franky Cola, and more.",
+          techStack: "HTML, CSS",
+          githubLink: "https://github.com/allenocvb/odinrecipes",
+          image: "/assets/OdinRecipesImg.png",
+        },
+        {
+          name: "Scavenger Hunt App",
+          description:
+            "iOS scavenger hunt app where users complete tasks by attaching photos. Displays task locations on a map with custom annotations.",
+          techStack: "Swift, UIKit, MapKit, CoreLocation",
+          githubLink: "https://github.com/allenocvb/scavengerHunt",
+          image: "/assets/TaskIMG.png",
+        },
+        {
+          name: "Adventure Journal",
+          description:
+            "Web app for posting personal challenges and achievements. Users can follow journeys, comment, and take on challenges themselves.",
+          techStack: "React, Supabase, JavaScript",
+          image: "/assets/Placeholder.png",
+        },
+        {
+          name: "B2B Marketplace",
+          description:
+            "Django e-commerce marketplace with role-based auth, product categories, shopping cart, and admin dashboard with analytics.",
+          techStack: "Python, Django, SQLite, TailwindCSS",
+          image: "/assets/B2bMarketplace.png",
+        },
+      ]}
     />
     <h2 id="contact" className={styles.sectionTitle}>
       Contact

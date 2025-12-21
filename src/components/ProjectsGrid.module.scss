@@ -1,0 +1,96 @@
+.projectsContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(280px, 1fr));
+  grid-gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (max-width: 1080px) {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.projectCard {
+  position: relative;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 2rem 1.75rem;
+  background-color: #dfdfe6;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-7px);
+    background-color: #d0d0db;
+  }
+}
+
+.cardHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.projectIcon {
+  color: #7b4ea2;
+}
+
+.projectImage {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.links {
+  display: flex;
+  gap: 12px;
+}
+
+.iconLink {
+  color: #555;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #7b4ea2;
+  }
+}
+
+.cardTitle {
+  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.cardDesc {
+  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+  margin-bottom: 1.5rem;
+}
+
+.cardTech {
+  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  color: #7b4ea2;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
