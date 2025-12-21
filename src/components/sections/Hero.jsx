@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Typewriter from "./Typewriter";
-import FlipImage from "./FlipImage";
+import Typewriter from "../ui/Typewriter";
+import FlipImage from "../ui/FlipImage";
 import styles from "./Hero.module.scss";
 
 const Hero = () => {

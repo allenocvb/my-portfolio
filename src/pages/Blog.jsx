@@ -13,7 +13,7 @@ const Blog = () => {
 
   // Group posts by year
   const postsByYear = posts.reduce((acc, post) => {
-    const year = "2024"; // You can extract this from date later
+    const year = "2025";
     if (!acc[year]) acc[year] = [];
     acc[year].push(post);
     return acc;
