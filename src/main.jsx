@@ -9,7 +9,8 @@ import About from "./components/About";
 import aboutMe from "./components/aboutMe";
 import { PowerGlitch } from "powerglitch";
 import styles from "./styles/SectionTitles.module.scss";
-import Wexperience from "./components/Wexperience";
+import ExperienceTimeline from "./components/ExperienceTimeline";
+import EducationCard from "./components/EducationCard";
 import ProjectCard from "./components/ProjectCard";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ContactLinks from "./components/ContactLinks";
@@ -163,45 +164,41 @@ const Content = ({ onEject }) => (
     <h2 id="experience" className={styles.sectionTitle}>
       Experience
     </h2>
-    <Wexperience
-      title="Software Engineer Intern"
-      company="Pinterest"
-      timeframe="May 2025 - August 2025"
-      description="Architected and shipped a discovery module on Home Feed, integrating user interest vectors and topic extraction services to enable serendipitous content exploration for millions of Pinners.
-     Designed and executed A/B experiments for Shopping Modules across 5 copy variants, collaborating with product/design teams.
-     Improved reliability and data integrity of a core API serving 170M+ requests by adding strict request parameter validation, eliminating invalid requests in production and reducing 3,000+ malformed requests daily."
-      logo="/assets/pinterest-logo.png"
-      companyLink="https://www.pinterestcareers.com/"
-    />
-    <Wexperience
-      title="Software Engineer Intern"
-      company="Warner Bros Discovery"
-      timeframe="June 2024 - August 2024"
-      description="Designed a shared Redis-based caching solution for Bleacher Report's web application, enhancing server-side rendering performance and cutting storage needs by up to 90%.
-     Worked closely with DevOps, engineering teams, and key stakeholders to design and optimize the architecture of the Bleacher Report web application, leveraging technologies like Next.js, Apollo GraphQL, and Docker.
-     Contributed to the front-end development of Bleacher Report 2.0, integrating betting features using Next.js, TypeScript, and Storybook, and conducted performance testing with k6 to ensure application reliability."
-      logo="/assets/wbdlogo.png"
-      companyLink="https://www.wbd.com/"
-    />
-    <Wexperience
-      title="Computer Science Instructor"
-      company="355Code"
-      timeframe="October 2022 - January 2024"
-      description="Tutored 20+ students in JavaScript and Python.
-     Demonstrated knowledge in both front-end and back-end technologies to provide comprehensive instruction.
-     Leveraged strong communication and teaching skills to break down complex concepts for diverse learners."
-      logo="/assets/355CodeLogo.png"
-      companyLink="https://www.355code.com/"
-    />
-    <Wexperience
-      title="Summiteer"
-      company="Capital One"
-      timeframe="July 2023 - August 2023"
-      description="Selected as one of 31 participants to participate in a week-long summit.
-     Attended a week of technical workshops on Web, Full-Stack, and Mobile Development using Git, React, SQL, APIs, AR (Snapchat Lens Studio), Swift, and more.
-     Finished 2nd place at the Summit hackathon where I worked in a group of four to create an application with the theme of 'Changing banking for good.'"
-      logo="/assets/CapitalOneLogo.jpg"
-      companyLink="https://www.capitalone.com/about/corporate-information/our-company/"
+    <ExperienceTimeline
+      experiences={[
+        {
+          title: "Software Engineer",
+          previousTitle: "Intern",
+          company: "Pinterest",
+          location: "Remote(NYC based)",
+          previousTimeframe: "May 2025 - August 2025",
+          timeframe: "Returning July 2026",
+          description:
+            "SWE on the Home Feed product team. Designed and shipped a Home Feed discovery module for Pinterest mobile, leveraging user interest vectors and topic extraction to drive serendipitous context discovery for millions of users. Worked on experiments for Shopping Modules and impoved a core API",
+          logo: "/assets/pinterest-logo.png",
+          companyLink: "https://www.pinterestcareers.com/",
+        },
+        {
+          title: "Software Engineer Intern",
+          company: "Warner Bros Discovery",
+          location: "Atlanta, Georgia",
+          timeframe: "June 2024 - August 2024",
+          description:
+            "SWE intern on Bleacher Report Web team. Built a POC for a shared Redis caching layer for Bleacher Report, improving SSR performance and reducing storage usage by up to 90%. Contributed to Bleacher Report 2.0 using Next.js, Typescript, and GraphQL, and validated performance and reliability through k6 load testing.",
+          logo: "/assets/wbdlogo.png",
+          companyLink: "https://www.wbd.com/",
+        },
+        {
+          title: "Computer Science Instructor",
+          company: "355Code",
+          location: "Remote",
+          timeframe: "October 2022 - January 2024",
+          description:
+            "Taught JavaScript and Python to students, covering both front-end and back-end fundamentals. Simplified complex concepts through clear explanations and hands on guidance tailored to diverse learning styles.",
+          logo: "/assets/355CodeLogo.png",
+          companyLink: "https://www.355code.com/",
+        },
+      ]}
     />
     <h2 id="projects" className={styles.sectionTitle}>
       Projects

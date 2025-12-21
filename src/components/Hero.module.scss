@@ -73,7 +73,7 @@
     font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
     font-weight: 200;
     font-size: 1.3em;
-    line-height: 40px;
+    line-height: 1.55;
     color: #888888;
     margin: 50px 0;
 
@@ -82,10 +82,14 @@
     }
 
     @media (max-width: 768px) {
-      font-size: 1.2em;
-      line-height: 30px;
+      font-size: 1rem;
       max-width: 100%;
       margin: 20px 0;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.95rem;
+      margin: 15px 0;
     }
   }
 
@@ -95,16 +99,20 @@
     font-style: italic;
     font-weight: 200;
     font-size: 1.1em;
-    line-height: 30px;
+    line-height: 1.55;
     color: #7b4ea2;
     margin-top: -30px;
     margin-bottom: 50px;
 
     @media (max-width: 768px) {
-      font-size: 1em;
-      line-height: 25px;
-      margin-top: -20px;
+      font-size: 0.9rem;
+      margin-top: -10px;
       margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 0.85rem;
+      margin-top: -5px;
     }
   }
 }

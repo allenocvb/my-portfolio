@@ -1,0 +1,92 @@
+.educationCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logoLink {
+  display: block;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.details {
+  flex: 1;
+}
+
+.school {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 0.35rem 0;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.location,
+.timeframe {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.icon {
+  font-size: 0.85rem;
+}
+
+.degree {
+  font-size: 0.95rem;
+  color: #333;
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .educationCard {
+    padding: 1rem;
+    margin: 0 1rem 1.5rem;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .school {
+    font-size: 1rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .degree {
+    font-size: 0.9rem;
+  }
+}
