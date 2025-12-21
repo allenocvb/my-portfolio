@@ -14,6 +14,7 @@ import EducationCard from "./components/EducationCard";
 import ProjectsGrid from "./components/ProjectsGrid";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ContactLinks from "./components/ContactLinks";
+import Blog from "./components/Blog";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -144,13 +145,16 @@ const EjectScreen = ({ onRewind }) => {
       >
         "Begin doing what you want to do now. We are not living in eternity. We
         have only this moment, sparkling like a star in our hand—and melting
-        like a snowflake." — Francis Bacon
+        like a snowflake." — Someone wise
       </p>
       <button
         onClick={onRewind}
         className="px-5 py-2.5 text-lg cursor-pointer z-10 hover:underline"
       >
-        Rewind ⏮
+        Rewind{" "}
+        <span style={{ fontFamily: "inherit", fontVariantEmoji: "text" }}>
+          ⏮︎
+        </span>
       </button>
     </div>
   );
@@ -174,7 +178,7 @@ const Content = ({ onEject }) => (
           previousTimeframe: "May 2025 - August 2025",
           timeframe: "Returning July 2026",
           description:
-            "SWE on the Home Feed product team. Designed and shipped a Home Feed discovery module for Pinterest mobile, leveraging user interest vectors and topic extraction to drive serendipitous context discovery for millions of users. Worked on experiments for Shopping Modules and impoved a core API",
+            "SWE on the Home Feed product team. Designed and shipped a Home Feed discovery module for Pinterest mobile, leveraging user interest vectors and topic extraction services to drive serendipitous context discovery for millions of users. Worked on experiments for Shopping Modules and impoved a core API",
           logo: "/assets/pinterest-logo.png",
           companyLink: "https://www.pinterestcareers.com/",
         },
@@ -216,9 +220,16 @@ const Content = ({ onEject }) => (
         {
           name: "Peer-to-Peer File Sharing",
           description:
-            "P2P file-sharing system with a central server tracking shared files. Files are chunked and downloaded from multiple peers with hash-based integrity checks.",
+            "P2P file-sharing system with a central server tracking shared files. Files are chunked and downloaded from multiple peers with hash-based integrity checks. (Academic)",
           techStack: "Python, Socket Programming, Multithreading",
           image: "/assets/P2PIMG.png",
+        },
+        {
+          name: "B2B Marketplace",
+          description:
+            "University django e-commerce marketplace with role-based auth, product categories, shopping cart, and admin dashboard with analytics. (Academic)",
+          techStack: "Python, Django, SQLite, TailwindCSS",
+          image: "/assets/B2bMarketplace.png",
         },
         {
           name: "Hornet Invasion",
@@ -259,13 +270,6 @@ const Content = ({ onEject }) => (
             "Web app for posting personal challenges and achievements. Users can follow journeys, comment, and take on challenges themselves.",
           techStack: "React, Supabase, JavaScript",
           image: "/assets/Placeholder.png",
-        },
-        {
-          name: "B2B Marketplace",
-          description:
-            "Django e-commerce marketplace with role-based auth, product categories, shopping cart, and admin dashboard with analytics.",
-          techStack: "Python, Django, SQLite, TailwindCSS",
-          image: "/assets/B2bMarketplace.png",
         },
       ]}
     />
@@ -325,9 +329,9 @@ const App = () => {
       createContainers: true,
       hideOverflow: false,
       timing: {
-        duration: 1000,
+        duration: 1350,
         iterations: 1,
-        easing: "ease-in-out",
+        easing: "ease-out",
       },
       glitchTimeSpan: {
         start: 0,
@@ -368,6 +372,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Content onEject={handleEject} />} />
+      <Route path="/blog" element={<Blog />} />
       <Route path="*" element={<NoSignal onInsertTape={handleRewind} />} />
     </Routes>
   );

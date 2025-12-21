@@ -1,7 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import spaceInvadersGif from "/assets/spaceinvadersgif.gif";
-import { Briefcase, FolderKanban, Mail } from "lucide-react";
+import { Briefcase, FolderKanban, Mail, BookOpen } from "lucide-react";
 
 const Navbar = ({ onEject }) => {
   const scrollToSection = (sectionId) => {
@@ -22,7 +23,10 @@ const Navbar = ({ onEject }) => {
           className={styles["space-invaders-gif"]}
         />
         <button onClick={onEject} className={styles["eject-button"]}>
-          EJECT ⏏
+          EJECT{" "}
+          <span style={{ fontFamily: "inherit", fontVariantEmoji: "text" }}>
+            ⏏︎
+          </span>
         </button>
       </div>
       <nav className={styles.navbar}>
@@ -41,6 +45,10 @@ const Navbar = ({ onEject }) => {
           <Mail className={styles.navIcon} />
           <span className={styles.navText}>Contact</span>
         </a>
+        <Link to="/blog" aria-label="Blog" className={styles.navLink}>
+          <BookOpen className={styles.navIcon} />
+          <span className={styles.navText}>Blog</span>
+        </Link>
       </nav>
     </div>
   );

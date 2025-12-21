@@ -6,12 +6,12 @@ export default [
   {
     input: "Allen.contactInfo",
     return:
-      '["<a href="mailto:aodoom04@gmail.com">aodoom04@gmail.com</a>", "<a rel="noopener" href="https://www.linkedin.com/in/allen-odoom">LinkedIn</a>", "<a rel="noopener" href="https://github.com/allenocvb">GitHub</a>"]',
+      '["<a href="mailto:aodoom04@gmail.com">aodoom04@gmail.com</a>", "<a rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/allen-odoom">LinkedIn</a>", "<a rel="noopener noreferrer" target="_blank" href="https://github.com/allenocvb">GitHub</a>"]',
   },
   {
     input: "Allen.resume",
     return:
-      '"<a rel="noopener" href="/allen_resume.pdf" target="_blank">allen_resume.pdf</a>"',
+      '"<a rel="noopener" href="/cv/Allen_Odoom_Resume.pdf" target="_blank">Allen_Odoom_Resume.pdf</a>"',
   },
   {
     input: "Allen.hobbies",
@@ -25,15 +25,15 @@ export default [
   {
     input: "Allen.languages",
     return:
-      '["Python", "Java", "JavaScript", "C", "C++", "Swift", "HTML", "CSS", "SQL"]',
+      '["Python", "Swift", "Kotlin", "Typescript/JavaScript", "C++", "HTML", "CSS", "SQL"]',
   },
   {
     input: "Allen.frameworks/libraries",
     return:
-      '["Next.js", "NumPy", "Pandas", "Flask", "Django", "React", "React Native", "Express", "GraphQL"]',
+      '["Next.js", "SwiftUI", "Jetpack Compose", "Flask", "Django", "React", "React Native", "Express", "GraphQL", "PyTorch"]',
   },
   {
     input: "Allen.technologies",
-    return: '["Docker", "K6", "Git", "AWS", "Redis"]',
+    return: '["Docker", "K6", "Git", "AWS", "Redis", "Linux"]',
   },
 ];

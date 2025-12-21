@@ -40,7 +40,7 @@ const Hero = () => {
       <div className={styles.heroDescription}>
         <p>
           Software engineer and soon-to-be Computer Science (B.S) graduate from
-          Pennsylvania State University.
+          the Pennsylvania State University.
         </p>
         <p>
           Highly interested in large-scale, high-impact products across mobile
