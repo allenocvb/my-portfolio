@@ -1,26 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "./Navbar.module.scss";
 import spaceInvadersGif from "/assets/spaceinvadersgif.gif";
+import { Briefcase, FolderKanban, Mail } from "lucide-react";
 
 const Navbar = ({ onEject }) => {
-  const [isSticky, setIsSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -31,11 +14,7 @@ const Navbar = ({ onEject }) => {
   };
 
   return (
-    <div
-      className={`${styles["navbar-container"]} ${
-        isSticky ? styles.sticky : ""
-      }`}
-    >
+    <div className={`${styles["navbar-container"]} ${styles.sticky}`}>
       <div className={styles["left-section"]}>
         <img
           src={spaceInvadersGif}
@@ -47,9 +26,21 @@ const Navbar = ({ onEject }) => {
         </button>
       </div>
       <nav className={styles.navbar}>
-        <a onClick={() => scrollToSection("experience")}>Experience</a>
-        <a onClick={() => scrollToSection("projects")}>Projects</a>
-        <a onClick={() => scrollToSection("contact")}>Contact</a>
+        <a
+          onClick={() => scrollToSection("experience")}
+          aria-label="Experience"
+        >
+          <Briefcase className={styles.navIcon} />
+          <span className={styles.navText}>Experience</span>
+        </a>
+        <a onClick={() => scrollToSection("projects")} aria-label="Projects">
+          <FolderKanban className={styles.navIcon} />
+          <span className={styles.navText}>Projects</span>
+        </a>
+        <a onClick={() => scrollToSection("contact")} aria-label="Contact">
+          <Mail className={styles.navIcon} />
+          <span className={styles.navText}>Contact</span>
+        </a>
       </nav>
     </div>
   );

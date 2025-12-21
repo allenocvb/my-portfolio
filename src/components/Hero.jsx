@@ -22,18 +22,21 @@ const Hero = () => {
         initDelay={700}
       />
       <div className={styles.heroDescription}>
-        I am a college student and Software Engineer. I have a passion for
-        learning, building beautiful user experiences, and giving back to
-        communities. Check out my{" "}
-        <a
-          onClick={() => scrollToSection("projects")}
-          style={{ cursor: "pointer", textDecoration: "underline" }}
-        >
-          side-projects
-        </a>{" "}
-        below.
-        <p className={styles.heroMessage}>
-          <em>Can click on project image to see github!</em>
+        <p>
+          Software engineer and soon-to-be Computer Science (B.S) graduate from
+          Pennsylvania State University.
+        </p>
+        <p>
+          Highly interested in large-scale, high-impact products across mobile
+          engineering, distributed systems, and artificial intelligence. Check
+          out my{" "}
+          <a
+            onClick={() => scrollToSection("projects")}
+            style={{ cursor: "pointer", textDecoration: "underline" }}
+          >
+            side-projects
+          </a>{" "}
+          below.
         </p>
       </div>
       <p className={styles.heroNote}>P.S. Try ejecting the page!</p>
