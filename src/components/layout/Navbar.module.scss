@@ -105,6 +105,18 @@
       }
     }
 
+    .blogLink {
+      color: #7b4ea2;
+
+      &:after {
+        background-color: #7b4ea2;
+      }
+
+      &:hover {
+        color: #535bf2;
+      }
+    }
+
     .navIcon {
       display: none;
       width: 20px;

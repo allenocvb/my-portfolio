@@ -7,9 +7,15 @@ import "react-vertical-timeline-component/style.min.css";
 import styles from "./ExperienceTimeline.module.scss";
 
 const ExperienceTimeline = ({ experiences }) => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
+
   return (
     <div className={styles.timelineContainer}>
-      <VerticalTimeline lineColor="#e5e5e5" layout="1-column-left">
+      <VerticalTimeline
+        lineColor="#e5e5e5"
+        layout="1-column-left"
+        animate={!isMobile}
+      >
         {experiences.map((exp, index) => (
           <VerticalTimelineElement
             key={index}

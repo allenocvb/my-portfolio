@@ -45,7 +45,11 @@ const Navbar = ({ onEject }) => {
           <Mail className={styles.navIcon} />
           <span className={styles.navText}>Contact</span>
         </a>
-        <Link to="/blog" aria-label="Blog" className={styles.navLink}>
+        <Link
+          to="/blog"
+          aria-label="Blog"
+          className={`${styles.navLink} ${styles.blogLink}`}
+        >
           <BookOpen className={styles.navIcon} />
           <span className={styles.navText}>Blog</span>
         </Link>

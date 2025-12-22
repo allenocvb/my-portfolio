@@ -5,11 +5,26 @@
   min-height: 100vh;
 }
 
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
 .title {
   font-size: 3rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 2rem;
+  margin: 0;
+}
+
+.titleImage {
+  height: 2em;
+  width: auto;
+  font-size: 3rem;
+  object-fit: contain;
+  border-radius: 4px;
 }
 
 .yearSection {
@@ -48,9 +63,10 @@
   min-width: 60px;
 }
 
-.postTitle {
+.postLink {
   font-size: 1.1rem;
   color: #1a1a1a;
+  text-decoration: none;
   cursor: pointer;
 
   &:hover {
@@ -82,6 +98,10 @@
   }
 
   .title {
+    font-size: 2.5rem;
+  }
+
+  .titleImage {
     font-size: 2.5rem;
   }
 

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { PowerGlitch } from "powerglitch";
 import Home from "./pages/Home";
-import Blog from "./pages/Blog";
+import BlogIndex from "./pages/blog/index";
+import BlogPost from "./pages/blog/BlogPost";
 import EjectScreen from "./pages/EjectScreen";
 import NoSignal from "./pages/NoSignal";
 
@@ -61,7 +62,8 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home onEject={handleEject} />} />
-      <Route path="/blog" element={<Blog />} />
+      <Route path="/blog" element={<BlogIndex />} />
+      <Route path="/blog/:slug" element={<BlogPost />} />
       <Route path="*" element={<NoSignal onInsertTape={handleRewind} />} />
     </Routes>
   );
