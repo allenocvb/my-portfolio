@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import blogPosts from "../../data/blogPosts";
 import Giscus from "../../components/ui/Giscus";
+import Footer from "../../components/layout/Footer";
 import styles from "./BlogPost.module.scss";
 
 const BlogPost = () => {
@@ -57,34 +58,37 @@ const BlogPost = () => {
   }
 
   return (
-    <div className={styles.blogPost}>
-      <header className={styles.header}>
-        <Link to="/blog" className={styles.backLink}>
-          &larr; Back to blog
-        </Link>
-        <time className={styles.date}>{post.date}</time>
-      </header>
+    <>
+      <div className={styles.blogPost}>
+        <header className={styles.header}>
+          <Link to="/blog" className={styles.backLink}>
+            &larr; Back to blog
+          </Link>
+          <time className={styles.date}>{post.date}</time>
+        </header>
 
-      <article className={styles.prose}>
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
-      </article>
+        <article className={styles.prose}>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+        </article>
 
-      <section className={styles.comments}>
-        <h2>Comments</h2>
-        <Giscus
-          repo="allenocvb/my-portfolio"
-          repoId="R_kgDOMr1AAw"
-          category="General"
-          categoryId="DIC_kwDOMr1AA84C0F76"
-        />
-      </section>
+        <section className={styles.comments}>
+          <h2>Comments</h2>
+          <Giscus
+            repo="allenocvb/my-portfolio"
+            repoId="R_kgDOMr1AAw"
+            category="General"
+            categoryId="DIC_kwDOMr1AA84C0F76"
+          />
+        </section>
 
-      <footer className={styles.footer}>
-        <Link to="/blog" className={styles.backLink}>
-          &larr; Back to blog
-        </Link>
-      </footer>
-    </div>
+        <footer className={styles.footer}>
+          <Link to="/blog" className={styles.backLink}>
+            &larr; Back to blog
+          </Link>
+        </footer>
+      </div>
+      <Footer />
+    </>
   );
 };
 

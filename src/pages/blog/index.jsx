@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import blogPosts from "../../data/blogPosts";
+import Footer from "../../components/layout/Footer";
 import styles from "./index.module.scss";
 
 const BlogIndex = () => {
@@ -23,40 +24,43 @@ const BlogIndex = () => {
   };
 
   return (
-    <div className={styles.blogContainer}>
-      <div className={styles.titleWrapper}>
-        <h1 className={styles.title}>Blog</h1>
-        <img
-          src="/assets/naruto.jpeg"
-          alt="Deku"
-          className={styles.titleImage}
-        />
+    <>
+      <div className={styles.blogContainer}>
+        <div className={styles.titleWrapper}>
+          <h1 className={styles.title}>Blog</h1>
+          <img
+            src="/assets/naruto.jpeg"
+            alt="Naruto"
+            className={styles.titleImage}
+          />
+        </div>
+
+        {sortedYears.length > 0 ? (
+          sortedYears.map((year) => (
+            <div key={year} className={styles.yearSection}>
+              <h2 className={styles.year}>{year}</h2>
+              <ul className={styles.postList}>
+                {postsByYear[year].map((post) => (
+                  <li key={post.slug} className={styles.postItem}>
+                    <span className={styles.date}>{formatDate(post.date)}</span>
+                    <Link to={`/blog/${post.slug}`} className={styles.postLink}>
+                      {post.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        ) : (
+          <p className={styles.comingSoon}>Coming soon...</p>
+        )}
+
+        <Link to="/" className={styles.backLink}>
+          Back to home
+        </Link>
       </div>
-
-      {sortedYears.length > 0 ? (
-        sortedYears.map((year) => (
-          <div key={year} className={styles.yearSection}>
-            <h2 className={styles.year}>{year}</h2>
-            <ul className={styles.postList}>
-              {postsByYear[year].map((post) => (
-                <li key={post.slug} className={styles.postItem}>
-                  <span className={styles.date}>{formatDate(post.date)}</span>
-                  <Link to={`/blog/${post.slug}`} className={styles.postLink}>
-                    {post.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
-      ) : (
-        <p className={styles.comingSoon}>Coming soon...</p>
-      )}
-
-      <Link to="/" className={styles.backLink}>
-        Back to home
-      </Link>
-    </div>
+      <Footer />
+    </>
   );
 };
 

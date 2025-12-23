@@ -6,6 +6,7 @@ import ExperienceTimeline from "../components/sections/ExperienceTimeline";
 import EducationCard from "../components/sections/EducationCard";
 import ProjectsGrid from "../components/sections/ProjectsGrid";
 import ContactLinks from "../components/layout/ContactLinks";
+import Footer from "../components/layout/Footer";
 import aboutMe from "../data/aboutMe";
 import experiences from "../data/experiences";
 import projects from "../data/projects";
@@ -28,6 +29,7 @@ const Home = ({ onEject }) => (
       Contact
     </h2>
     <ContactLinks />
+    <Footer />
   </div>
 );
 
