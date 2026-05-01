@@ -23,7 +23,7 @@ const Hero = () => {
     <div className={styles.heroContainer}>
       <div className={styles.flipImageWrapper}>
         <FlipImage
-          front="/assets/FlipedLuffy.jpeg"
+          front="/assets/tosen1.jpeg"
           back="/assets/MyPic.JPG"
           alt="avatar"
           triggerFlip={triggerFlip}
