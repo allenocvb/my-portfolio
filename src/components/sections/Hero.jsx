@@ -39,13 +39,13 @@ const Hero = () => {
       />
       <div className={styles.heroDescription}>
         <p>
-          Software engineer and soon-to-be B.S. Computer Science graduate from
-          The Pennsylvania State University.
+          Software engineer and B.S. in Computer Science graduate from The
+          Pennsylvania State University.
         </p>
         <p>
           Highly interested in large-scale, high-impact products across mobile
-          engineering, distributed systems, and artificial intelligence. Check
-          out my{" "}
+          engineering, distributed systems, and applied artificial intelligence.
+          Check out my{" "}
           <a
             onClick={() => scrollToSection("projects")}
             style={{ cursor: "pointer", textDecoration: "underline" }}
