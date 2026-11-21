@@ -3,14 +3,13 @@ import projects from "../data/projects.js";
 import experiences from "../data/experiences.js";
 
 const help = [
-  ["help", "Show these commands"],
-  ["about", "Meet Allen"],
   ["skills", "Languages, frameworks, and tools"],
   ["projects", "Explore my projects"],
   ["experience", "My career so far"],
   ["resume", "Get my résumé"],
   ["contact", "Get in touch"],
   ["hobbies", "Life outside of code"],
+  ["play", "Play Space Invaders"],
   ["theme light / theme dark", "Change the site's appearance"],
   ["clear", "Clear the terminal"],
   ["reset", "Restore the original introduction"],
@@ -20,8 +19,6 @@ const aliases = {
   "allen.skills": "skills",
   "allen.projects": "projects",
   "allen.experience": "experience",
-  "allen.about": "about",
-  whoami: "about",
   "sudo hire allen": "allen.contactinfo",
   contact: "allen.contactinfo",
   resume: "allen.resume",
@@ -29,10 +26,11 @@ const aliases = {
 };
 
 export const commandNames = [
+  "help",
   ...help.map(([name]) => name).filter((name) => !name.includes(" / ")),
-  "theme light", "theme dark", "whoami",
+  "theme light", "theme dark",
   ...aboutMe.map(({ input }) => input),
-  "Allen.skills", "Allen.projects", "Allen.experience", "Allen.about",
+  "Allen.skills", "Allen.projects", "Allen.experience",
 ];
 
 const text = (value) => ({ type: "text", value });
@@ -46,11 +44,9 @@ export function runCommand(input) {
   if (command === "clear" || command === "reset") return { action: command, output: [] };
   if (command === "help") return { output: [
     { type: "help", commands: help },
-    text("Try Allen.languages, too. Tab completes a command; ↑ / ↓ recall history."),
+    text("Tab completes a command; ↑ / ↓ recall history."),
   ] };
-  if (command === "about") return { output: [text(
-    "I'm Allen Odoom, a Software Engineer and Penn State Computer Science graduate. I'm interested in mobile engineering, distributed systems, and applied AI.",
-  )] };
+  if (command === "play") return { action: "play", output: [text("Inserting tape…")] };
   if (command === "skills") return { output: aboutMe
     .filter(({ input }) => ["Allen.languages", "Allen.frameworks_libraries", "Allen.technologies"].includes(input))
     .map(statementOutput) };

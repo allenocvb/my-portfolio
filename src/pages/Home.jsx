@@ -16,7 +16,7 @@ const Home = ({ onEject }) => (
   <div className="content-container" style={{ paddingTop: "80px" }}>
     <Navbar onEject={onEject} />
     <Hero />
-    <About statements={aboutMe} />
+    <About statements={aboutMe} onPlay={() => onEject({ play: true })} />
     <h2 id="experience" className={styles.sectionTitle}>
       Experience
     </h2>

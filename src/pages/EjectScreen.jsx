@@ -1,37 +1,46 @@
-import React, { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PowerGlitch } from "powerglitch";
 import AnimatedBackground from "../components/ui/AnimatedBackground";
+import InvadersGame from "../components/game/InvadersGame";
+import { fetchLeaderboard } from "../game/leaderboard";
+import styles from "./EjectScreen.module.scss";
 
-const EjectScreen = ({ onRewind }) => {
-  const [position, setPosition] = useState({ x: 50, y: 50 });
-  const [velocity, setVelocity] = useState({ x: 5, y: 5 });
-  const [rotation, setRotation] = useState(0);
+const SIZE = 100;
+const SPEED = 100; // px per second
+const SPIN = 100; // degrees per second
 
-  const updatePosition = useCallback(() => {
-    setPosition((prev) => {
-      let newX = prev.x + velocity.x;
-      let newY = prev.y + velocity.y;
-      let newVelocityX = velocity.x;
-      let newVelocityY = velocity.y;
+const EjectScreen = ({ onRewind, autoPlay = false }) => {
+  const [playing, setPlaying] = useState(autoPlay);
+  const [autoStart, setAutoStart] = useState(autoPlay);
+  const [hiScore, setHiScore] = useState(null);
+  const invaderRef = useRef(null);
+  const motion = useRef({ x: 50, y: 50, vx: SPEED, vy: SPEED, rotation: 0 });
 
-      if (newX <= 0 || newX >= window.innerWidth - 100) {
-        newVelocityX = -newVelocityX;
-      }
-      if (newY <= 0 || newY >= window.innerHeight - 100) {
-        newVelocityY = -newVelocityY;
-      }
-
-      setVelocity({ x: newVelocityX, y: newVelocityY });
-      setRotation((prev) => (prev + 5) % 360);
-
-      return { x: newX, y: newY };
-    });
-  }, [velocity]);
-
+  // Bouncing invader: one rAF loop writing a transform, no React re-renders.
+  // Paused while the game is open.
   useEffect(() => {
-    const intervalId = setInterval(updatePosition, 50);
-    return () => clearInterval(intervalId);
-  }, [updatePosition]);
+    if (playing) return undefined;
+    let raf = 0;
+    let last = performance.now();
+    const step = (now) => {
+      raf = requestAnimationFrame(step);
+      const dt = Math.min(0.05, (now - last) / 1000);
+      last = now;
+      const m = motion.current;
+      const maxX = window.innerWidth - SIZE;
+      const maxY = window.innerHeight - SIZE;
+      m.x += m.vx * dt;
+      m.y += m.vy * dt;
+      if (m.x <= 0 || m.x >= maxX) { m.vx = m.x <= 0 ? Math.abs(m.vx) : -Math.abs(m.vx); m.x = Math.max(0, Math.min(maxX, m.x)); }
+      if (m.y <= 0 || m.y >= maxY) { m.vy = m.y <= 0 ? Math.abs(m.vy) : -Math.abs(m.vy); m.y = Math.max(0, Math.min(maxY, m.y)); }
+      m.rotation = (m.rotation + SPIN * dt) % 360;
+      if (invaderRef.current) {
+        invaderRef.current.style.transform = `translate3d(${m.x}px, ${m.y}px, 0) rotate(${m.rotation}deg)`;
+      }
+    };
+    raf = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(raf);
+  }, [playing]);
 
   useEffect(() => {
     const glitchEffect = PowerGlitch.glitch("#eject-screen", {
@@ -66,62 +75,60 @@ const EjectScreen = ({ onRewind }) => {
     };
   }, []);
 
+  useEffect(() => {
+    if (playing) return;
+    let active = true;
+    fetchLeaderboard().then((board) => {
+      if (active) setHiScore(board.top[0]?.score ?? null);
+    });
+    return () => { active = false; };
+  }, [playing]);
+
+  const openGame = () => {
+    setAutoStart(false);
+    setPlaying(true);
+  };
+
   return (
-    <div
-      id="eject-screen"
-      style={{
-        fontFamily: "VCR, monospace",
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        backgroundColor: "black",
-        color: "white",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        overflow: "hidden",
-      }}
-    >
-      <AnimatedBackground />
-      <img
-        src="/assets/spaceinvaders2.gif"
-        alt="Space Invader"
-        style={{
-          position: "absolute",
-          left: `${position.x}px`,
-          top: `${position.y}px`,
-          width: "100px",
-          height: "auto",
-          transform: `rotate(${rotation}deg)`,
-          transition: "transform 0.05s linear",
-          zIndex: 1,
-        }}
-      />
-      <p
-        style={{
-          fontSize: "24px",
-          textAlign: "center",
-          maxWidth: "80%",
-          marginBottom: "20px",
-          zIndex: 2,
-        }}
-      >
-        "Begin doing what you want to do now. We are not living in eternity. We
-        have only this moment, sparkling like a star in our hand—and melting
-        like a snowflake." — Someone wise
-      </p>
-      <button
-        onClick={onRewind}
-        className="px-5 py-2.5 text-lg cursor-pointer z-10 hover:underline"
-      >
-        Rewind{" "}
-        <span style={{ fontFamily: "inherit", fontVariantEmoji: "text" }}>
-          ⏮︎
-        </span>
-      </button>
+    // The wrapper keeps React's DOM bookkeeping stable while PowerGlitch wraps #eject-screen.
+    <div>
+      <div id="eject-screen" className={styles.ejectScreen} aria-hidden={playing || undefined}>
+        {!playing && <AnimatedBackground />}
+        <img
+          ref={invaderRef}
+          src="/assets/spaceinvaders2.gif"
+          alt=""
+          className={styles.invader}
+          style={{ transform: "translate3d(50px, 50px, 0)" }}
+        />
+
+        <button type="button" className={styles.playButton} onClick={openGame} aria-label="Play Space Invader">
+          <span className={styles.playLabel}>PLAY</span>
+          <svg className={styles.playIcon} viewBox="0 0 10 12" aria-hidden="true">
+            <path d="M0 0 L10 6 L0 12 Z" fill="currentColor" />
+          </svg>
+          {hiScore != null && hiScore > 0 && (
+            <span className={styles.hiScore}>HI {String(hiScore).padStart(6, "0")}</span>
+          )}
+        </button>
+
+        <p className={styles.quote}>
+          &quot;Begin doing what you want to do now. We are not living in eternity. We
+          have only this moment, sparkling like a star in our hand—and melting
+          like a snowflake.&quot; — Someone wise
+        </p>
+        <button
+          onClick={onRewind}
+          className="px-5 py-2.5 text-lg cursor-pointer z-10 hover:underline"
+        >
+          Rewind{" "}
+          <span style={{ fontFamily: "inherit", fontVariantEmoji: "text" }}>
+            ⏮︎
+          </span>
+        </button>
+      </div>
+
+      {playing && <InvadersGame autoStart={autoStart} onExit={() => setPlaying(false)} />}
     </div>
   );
 };

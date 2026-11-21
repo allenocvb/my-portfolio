@@ -29,7 +29,7 @@ function Output({ output }) {
   });
 }
 
-export default function About({ statements }) {
+export default function About({ statements, onPlay }) {
   const [showIntro, setShowIntro] = useState(true);
   const [entries, setEntries] = useState([]);
   const [value, setValue] = useState("");
@@ -67,6 +67,7 @@ export default function About({ statements }) {
       setAnnouncement(result.action === "reset" ? "Original introduction restored." : "Terminal cleared. Type help for commands.");
     } else {
       if (result.action === "theme") setThemePreference(result.theme);
+      if (result.action === "play") onPlay?.();
       setEntries((previous) => [...previous, { input: trimmed, output: result.output }].slice(-50));
       setAnnouncement(`Finished ${trimmed}. Output is above the command input.`);
     }

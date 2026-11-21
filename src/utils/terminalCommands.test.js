@@ -21,7 +21,8 @@ test("only explicit commands can change state", () => {
   assert.equal(runCommand("reset").action, "reset");
   assert.equal(runCommand("theme dark").theme, "dark");
   assert.equal(runCommand("theme light").theme, "light");
-  for (const input of ["theme purple", "clear; alert(1)", "<img src=x onerror=alert(1)>", "constructor", "toString", "__proto__"]) {
+  assert.equal(runCommand("PLAY").action, "play");
+  for (const input of ["about", "whoami", "Allen.about", "theme purple", "clear; alert(1)", "<img src=x onerror=alert(1)>", "constructor", "toString", "__proto__"]) {
     assert.equal(runCommand(input).action, undefined);
     assert.equal(runCommand(input).output[0].type, "text");
     assert.match(runCommand(input).output[0].value, /Unknown command/);
@@ -33,4 +34,13 @@ test("completion supports both command styles", () => {
   assert.deepEqual(completeCommand("Allen.lang"), ["Allen.languages"]);
   assert.deepEqual(completeCommand(""), []);
   assert.deepEqual(completeCommand("invalid"), []);
+});
+test("help lists play but not itself or about", () => {
+  const [list, hint] = runCommand("help").output;
+  const names = list.commands.map(([name]) => name);
+  assert.ok(names.includes("play"));
+  assert.ok(!names.includes("help"));
+  assert.ok(!names.includes("about"));
+  assert.doesNotMatch(hint.value, /Allen\.languages/);
+  assert.deepEqual(completeCommand("pla"), ["play"]);
 });

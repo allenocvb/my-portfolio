@@ -36,4 +36,8 @@ export default [
       "react/prop-types": "off",
     },
   },
+  {
+    files: ["api/**/*.js", "vite.config.js", "**/*.test.js"],
+    languageOptions: { globals: { ...globals.node } },
+  },
 ];
