@@ -1,3 +1,4 @@
+import ThemeToggle from "../ui/ThemeToggle";
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
@@ -31,17 +32,17 @@ const Navbar = ({ onEject }) => {
       </div>
       <nav className={styles.navbar}>
         <a
-          onClick={() => scrollToSection("experience")}
+          href="#experience" onClick={(event) => { event.preventDefault(); scrollToSection("experience"); } }
           aria-label="Experience"
         >
           <Briefcase className={styles.navIcon} />
           <span className={styles.navText}>Experience</span>
         </a>
-        <a onClick={() => scrollToSection("projects")} aria-label="Projects">
+        <a href="#projects" onClick={(event) => { event.preventDefault(); scrollToSection("projects"); } } aria-label="Projects">
           <FolderKanban className={styles.navIcon} />
           <span className={styles.navText}>Projects</span>
         </a>
-        <a onClick={() => scrollToSection("contact")} aria-label="Contact">
+        <a href="#contact" onClick={(event) => { event.preventDefault(); scrollToSection("contact"); } } aria-label="Contact">
           <Mail className={styles.navIcon} />
           <span className={styles.navText}>Contact</span>
         </a>
@@ -53,6 +54,7 @@ const Navbar = ({ onEject }) => {
           <BookOpen className={styles.navIcon} />
           <span className={styles.navText}>Blog</span>
         </Link>
+        <ThemeToggle />
       </nav>
     </div>
   );

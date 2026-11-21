@@ -15,7 +15,7 @@
 .title {
   font-size: 3rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--heading);
   margin: 0;
 }
 
@@ -34,7 +34,7 @@
 .year {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--heading);
   margin-bottom: 1rem;
 }
 
@@ -49,41 +49,41 @@
   align-items: baseline;
   gap: 2rem;
   padding: 0.75rem 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border);
   transition: background-color 0.2s ease;
 
   &:hover {
-    background-color: #f9f9f9;
+    background-color: var(--surface-soft);
   }
 }
 
 .date {
   font-size: 0.95rem;
-  color: #888;
+  color: var(--muted);
   min-width: 60px;
 }
 
 .postLink {
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: var(--heading);
   text-decoration: none;
   cursor: pointer;
 
   &:hover {
-    color: #7b4ea2;
+    color: var(--accent);
   }
 }
 
 .comingSoon {
   font-size: 1.2rem;
-  color: #888;
+  color: var(--muted);
   font-style: italic;
 }
 
 .backLink {
   display: inline-block;
   margin-top: 3rem;
-  color: #7b4ea2;
+  color: var(--accent);
   text-decoration: none;
   font-size: 1rem;
 

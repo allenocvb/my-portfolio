@@ -12,7 +12,7 @@ const ExperienceTimeline = ({ experiences }) => {
   return (
     <div className={styles.timelineContainer}>
       <VerticalTimeline
-        lineColor="#e5e5e5"
+        lineColor="var(--border)"
         layout="1-column-left"
         animate={!isMobile}
       >
@@ -21,16 +21,16 @@ const ExperienceTimeline = ({ experiences }) => {
             key={index}
             className={styles.timelineElement}
             contentStyle={{
-              background: "#dfdfe6", // #dfdfe6 // #f5f5f5
+              background: "var(--surface)",
               boxShadow: "0 3px 10px rgba(0, 0, 0, 0.08)",
-              border: "1px solid #e5e5e5",
+              border: "1px solid var(--border)",
               borderRadius: "25px",
               padding: "1.5rem",
             }}
-            contentArrowStyle={{ borderRight: "7px solid #e5e5e5" }}
+            contentArrowStyle={{ borderRight: "7px solid var(--border)" }}
             iconStyle={{
               background: "#fff",
-              boxShadow: "0 0 0 4px #e5e5e5",
+              boxShadow: "0 0 0 4px var(--border)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",

@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconLink}
-              aria-label="GitHub"
+              aria-label={`${project.name} on GitHub`}
             >
               <Github size={22} />
             </a>
@@ -35,14 +35,14 @@ const ProjectCard = ({ project }) => {
               target="_blank"
               rel="noopener noreferrer"
               className={styles.iconLink}
-              aria-label="Live Demo"
+              aria-label={`View ${project.name} live`}
             >
               <ExternalLink size={22} />
             </a>
           )}
         </div>
       </div>
-      <div className={styles.cardTitle}>{project.name}</div>
+      <h3 className={styles.cardTitle}>{project.name}</h3>
       <div className={styles.cardDesc}>{project.description}</div>
       <div className={styles.cardTech}>{project.techStack}</div>
     </div>

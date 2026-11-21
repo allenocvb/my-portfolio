@@ -1,3 +1,4 @@
+import ThemeToggle from "../../components/ui/ThemeToggle";
 import React from "react";
 import { Link } from "react-router-dom";
 import blogPosts from "../../data/blogPosts";
@@ -25,6 +26,7 @@ const BlogIndex = () => {
 
   return (
     <>
+      <div className="blog-theme-toggle"><ThemeToggle /></div>
       <div className={styles.blogContainer}>
         <div className={styles.titleWrapper}>
           <h1 className={styles.title}>Blog</h1>

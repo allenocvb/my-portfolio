@@ -1,11 +1,15 @@
 .navbar-container {
+  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  font-size: 1.2rem;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 8rem;
+  padding: 0.75rem clamp(1rem, 6vw, 8rem);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: var(--nav);
   transition: all 0.3s ease;
 
   &.sticky {
@@ -18,6 +22,7 @@
   @media (max-width: 768px) {
     flex-direction: row;
     padding: 0.75rem 1rem;
+    font-size: 0.95rem;
   }
 
   .left-section {
@@ -37,6 +42,9 @@
 
     .eject-button {
       position: relative;
+      font: inherit;
+      min-height: 44px;
+      white-space: nowrap;
       cursor: pointer;
 
       &::after {
@@ -46,7 +54,7 @@
         height: 2px;
         bottom: -2px;
         left: 0;
-        background-color: black;
+        background-color: var(--text);
         transition: width 0.15s ease-in-out;
       }
 
@@ -68,10 +76,10 @@
       Open Sans,
       Segoe UI,
       sans-serif;
-    font-size: 1.2em;
+    font-size: inherit;
 
     @media (max-width: 768px) {
-      gap: 1.25rem;
+      gap: 0.25rem;
       margin-top: 0;
     }
 
@@ -79,7 +87,7 @@
     .navLink {
       position: relative;
       text-decoration: none;
-      color: #2d2b2f;
+      color: var(--text);
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -91,13 +99,13 @@
         bottom: -10px;
         width: 0;
         height: 8px;
-        background-color: #7b4ea2;
+        background-color: var(--accent);
         content: "";
         transition: width 0.15s ease-in-out;
       }
 
       &:hover {
-        color: #535bf2;
+        color: var(--link-hover);
 
         &:after {
           width: 100%;
@@ -106,14 +114,14 @@
     }
 
     .blogLink {
-      color: #7b4ea2;
+      color: var(--accent);
 
       &:after {
-        background-color: #7b4ea2;
+        background-color: var(--accent);
       }
 
       &:hover {
-        color: #535bf2;
+        color: var(--link-hover);
       }
     }
 
@@ -136,3 +144,13 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .navbar-container .navbar a { min-width: 40px; min-height: 44px; justify-content: center; }
+}
+@media (max-width: 360px) {
+  .navbar-container { padding-inline: 0.5rem; }
+  .navbar-container .left-section .space-invaders-gif { width: 24px; margin-right: 0.25rem; }
+}
+
+:global([data-theme="dark"]) .space-invaders-gif { filter: invert(1); }

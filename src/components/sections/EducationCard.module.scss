@@ -5,8 +5,8 @@
   max-width: 900px;
   margin: 0 auto 2rem;
   padding: 1.25rem 1.5rem;
-  background: #fff;
-  border: 1px solid #e5e5e5;
+  background: var(--page);
+  border: 1px solid var(--border);
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
@@ -35,7 +35,7 @@
 .school {
   font-size: 1.15rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--heading);
   margin: 0 0 0.35rem 0;
 }
 
@@ -49,7 +49,7 @@
 .location,
 .timeframe {
   font-size: 0.9rem;
-  color: #555;
+  color: var(--muted);
   display: flex;
   align-items: center;
   gap: 0.25rem;
@@ -61,7 +61,7 @@
 
 .degree {
   font-size: 0.95rem;
-  color: #333;
+  color: var(--text);
   margin: 0;
   line-height: 1.5;
 }

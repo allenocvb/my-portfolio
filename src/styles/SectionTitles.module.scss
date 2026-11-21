@@ -1,5 +1,5 @@
 .sectionTitle {
-  color: #888888;
+  color: var(--muted);
   font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
   font-weight: 500;
   font-size: 1.5em;
@@ -14,7 +14,7 @@
 
   &:after {
     content: " ";
-    border: 4px solid #7b4ea2;
+    border: 4px solid var(--accent);
     display: block;
     margin: 0 auto;
     margin-top: 30px;

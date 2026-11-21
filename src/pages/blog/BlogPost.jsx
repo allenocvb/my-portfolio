@@ -1,3 +1,4 @@
+import ThemeToggle from "../../components/ui/ThemeToggle";
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
@@ -59,6 +60,7 @@ const BlogPost = () => {
 
   return (
     <>
+      <div className="blog-theme-toggle"><ThemeToggle /></div>
       <div className={styles.blogPost}>
         <header className={styles.header}>
           <Link to="/blog" className={styles.backLink}>

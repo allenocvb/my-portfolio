@@ -13,7 +13,7 @@
 
     .terminalHeader {
       height: 28px;
-      background-color: #e4e3e5;
+      background-color: var(--terminal-bar);
       border-radius: 10px 10px 0 0;
       display: flex;
       justify-content: flex-start;

@@ -71,3 +71,46 @@ strike {
     transform: rotate(360deg);
   }
 }
+
+:root {
+  color-scheme: light;
+  --page: #ffffff;
+  --text: #2d2b2f;
+  --heading: #1a1a1a;
+  --muted: #62606b;
+  --accent: #7b4ea2;
+  --link-hover: #535bf2;
+  --surface: #dfdfe6;
+  --surface-hover: #d0d0db;
+  --surface-soft: #f5f5f8;
+  --border: #dedde5;
+  --nav: rgba(255, 255, 255, 0.94);
+  --terminal-bar: #e4e3e5;
+  --inline-code: #b52666;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #17151c;
+  --text: #dedbe6;
+  --heading: #f4f0fa;
+  --muted: #b1aaba;
+  --accent: #c49ae9;
+  --link-hover: #aaa8ff;
+  --surface: #28242f;
+  --surface-hover: #342d3e;
+  --surface-soft: #221e29;
+  --border: #443b50;
+  --nav: rgba(23, 21, 28, 0.94);
+  --terminal-bar: #3c3546;
+  --inline-code: #f29bc2;
+}
+body { background: var(--page); color: var(--text); }
+::selection { background: var(--accent); color: var(--page); }
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+[id] { scroll-margin-top: 6rem; }
+
+.blog-theme-toggle { position: fixed; top: 1rem; right: clamp(1rem, 6vw, 8rem); z-index: 1000; }

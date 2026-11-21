@@ -11,7 +11,7 @@
 
   a {
     font-weight: bold;
-    color: #535bf2;
+    color: var(--link-hover);
   }
 
   @media (max-width: 1024px) {
@@ -50,14 +50,14 @@
     align-self: flex-start;
     font-family: "Monaco", Consolas, "Lucida Console", monospace;
     font-size: clamp(2rem, 8vw, 4.5rem);
-    color: #2d2b2f;
+    color: var(--text);
 
     &:before {
       content: ">\a0";
     }
 
     span {
-      background-color: black;
+      background-color: var(--text);
       animation: caret 1s steps(1) infinite;
     }
 
@@ -74,7 +74,7 @@
     font-weight: 200;
     font-size: 1.3em;
     line-height: 1.55;
-    color: #888888;
+    color: var(--muted);
     margin: 50px 0;
 
     p {
@@ -100,7 +100,7 @@
     font-weight: 200;
     font-size: 1.1em;
     line-height: 1.55;
-    color: #7b4ea2;
+    color: var(--accent);
     margin-top: -30px;
     margin-bottom: 50px;
 

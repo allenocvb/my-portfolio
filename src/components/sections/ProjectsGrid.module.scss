@@ -6,19 +6,13 @@
 
 .projectsGrid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 1fr));
-  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 15px;
   list-style: none;
   padding: 0;
   margin: 0;
+  > li { min-width: 0; }
 
-  @media (max-width: 1080px) {
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-  }
-
-  @media (max-width: 700px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .projectCard {
@@ -28,13 +22,14 @@
   flex-direction: column;
   height: 100%;
   padding: 2rem 1.75rem;
-  background-color: #dfdfe6;
+  background-color: var(--surface);
   border-radius: 16px;
-  transition: all 0.3s ease;
+  border: 1px solid var(--border);
+  transition: transform 0.2s ease, background-color 0.2s ease;
 
   &:hover {
     transform: translateY(-7px);
-    background-color: #d0d0db;
+    background-color: var(--surface-hover);
   }
 }
 
@@ -47,7 +42,7 @@
 }
 
 .projectIcon {
-  color: #7b4ea2;
+  color: var(--accent);
 }
 
 .projectImage {
@@ -63,17 +58,17 @@
 }
 
 .iconLink {
-  color: #555;
+  color: var(--muted);
   transition: color 0.2s ease;
 
   &:hover {
-    color: #7b4ea2;
+    color: var(--accent);
   }
 }
 
 .cardTitle {
   font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
-  color: #1a1a1a;
+  color: var(--heading);
   font-size: 1.35rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
@@ -81,7 +76,7 @@
 
 .cardDesc {
   font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
-  color: #555;
+  color: var(--muted);
   font-size: 1rem;
   line-height: 1.5;
   flex-grow: 1;
@@ -90,7 +85,25 @@
 
 .cardTech {
   font-family: "Monaco", Consolas, "Lucida Console", monospace;
-  color: #7b4ea2;
+  color: var(--accent);
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.iconLink { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
+.cardTitle, .cardDesc, .cardTech { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .projectsContainer { width: 100%; padding: 0 clamp(1.5rem, 10vw, 3.25rem); }
+  .projectsGrid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .projectCard { padding: 1.1rem 1.2rem; border-radius: 12px; }
+  .cardHeader { margin-bottom: 0.5rem; }
+  .projectImage { width: 40px; height: 40px; }
+  .cardTitle { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .cardDesc { margin-bottom: 0.85rem; }
+  .cardTech { font-size: 0.875rem; }
+  .links { gap: 2px; }
+}
+@media (hover: none), (prefers-reduced-motion: reduce) {
+  .projectCard:hover { transform: none; }
+  .projectCard { transition: none; }
 }
