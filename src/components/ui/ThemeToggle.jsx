@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { setThemePreference } from "../../utils/theme";
 import { Moon, Sun } from "lucide-react";
 import styles from "./ThemeToggle.module.scss";
 
@@ -22,9 +23,8 @@ export default function ThemeToggle() {
 
   const toggle = () => {
     const next = theme === "dark" ? "light" : "dark";
-    document.documentElement.dataset.theme = next;
+    setThemePreference(next);
     setTheme(next);
-    try { localStorage.setItem("portfolio-theme", next); } catch { /* Works without storage. */ }
   };
   const label = `Switch to ${theme === "dark" ? "light" : "dark"} mode`;
   return (

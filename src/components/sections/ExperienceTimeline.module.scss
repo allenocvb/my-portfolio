@@ -1,4 +1,5 @@
 .timelineContainer {
+  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -32,6 +33,7 @@
   }
 
   :global(.vertical-timeline-element-content) {
+    padding: 1.5rem;
     margin-left: 80px;
     width: calc(100% - 90px);
     float: none;
@@ -97,13 +99,13 @@
 }
 
 .location {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--muted);
   margin: 0 0 0.75rem 0;
 }
 
 .description {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--text);
   line-height: 1.6;
   margin: 0 0 0.75rem 0;
@@ -111,7 +113,7 @@
 }
 
 .timeframe {
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   color: var(--accent);
   margin: 0;
   font-weight: 500;
@@ -135,27 +137,35 @@
 @media (max-width: 768px) {
   .timelineContainer {
     :global(.vertical-timeline::before) {
-      left: 30px; /* Line position on mobile */
+      left: 16px;
+      width: 3px;
     }
 
     :global(.vertical-timeline-element-icon) {
-      width: 45px;
-      height: 45px;
-      left: 12.5px; /* Centers 45px icon on line at 30px + 5px = 35px center */
+      width: 32px;
+      height: 32px;
+      left: 1.5px;
     }
 
     :global(.vertical-timeline-element-content) {
-      margin-left: 70px;
-      width: calc(100% - 80px);
+      margin-left: 48px;
+      width: calc(100% - 48px);
       padding: 1rem;
     }
   }
 
   .title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
+}
+
+// Override the timeline package's element selectors, which otherwise shrink paragraphs to 13px.
+.timelineContainer :global(.vertical-timeline-element-content) {
+  .title { font-family: inherit; }
+  p.location, p.description { font-size: 1rem; line-height: 1.5; }
+  p.timeframe { font-size: 0.875rem; line-height: 1.5; }
 }

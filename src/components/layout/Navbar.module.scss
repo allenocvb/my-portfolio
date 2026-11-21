@@ -154,3 +154,7 @@
 }
 
 :global([data-theme="dark"]) .space-invaders-gif { filter: invert(1); }
+
+@media (max-width: 340px) {
+  .navbar-container .left-section .space-invaders-gif { display: none; }
+}

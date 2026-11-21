@@ -4,7 +4,6 @@
   align-items: center;
   margin: 0 auto;
   padding: 0 3rem;
-  min-height: 80vh;
   max-width: 1200px;
 
   .terminal {
@@ -52,6 +51,10 @@
       font-family: "Monaco", Consolas, "Lucida Console", monospace;
       width: 100%;
       max-width: 1000px;
+      font-size: 1rem;
+      line-height: 1.5;
+      padding-bottom: 2rem;
+      overflow-wrap: anywhere;
 
       a {
         color: #4dc9b3;
@@ -59,10 +62,6 @@
 
       .statement:first-child {
         padding-top: 35px;
-      }
-
-      .statement:last-child {
-        padding-bottom: 60px;
       }
 
       .statement {
@@ -83,16 +82,6 @@
           color: #e7d184;
         }
 
-        span {
-          background: rgba(247, 247, 247, 0.65);
-          animation: caret 1s steps(1) infinite;
-        }
-
-        @keyframes caret {
-          50% {
-            background-color: transparent;
-          }
-        }
       }
     }
   }
@@ -104,4 +93,59 @@
   @media (max-width: 768px) {
     padding: 0 1rem;
   }
+}
+
+.history, .promptArea { margin: 0 35px; }
+.history {
+  position: relative;
+  max-height: min(24rem, 50svh);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #8c8395 #2d2b2f;
+  padding-block: 0.5rem;
+  &:focus-visible { outline: 2px solid #4dc9b3; outline-offset: 4px; }
+}
+.historyEntry { margin-bottom: 1.25rem; white-space: pre-wrap; }
+.terminalWindow .inputStatement { color: #f7f7f7; &::before { content: ">\a0"; } }
+.terminalWindow .returnStatement { color: #e7d184; }
+.outputItem { margin: 0.5rem 0; }
+.outputLabel { color: #c6becd; }
+.commandList > div { margin-bottom: 0.65rem; }
+.commandList dt { color: #4dc9b3; }
+.commandList dd { margin: 0; }
+.promptArea { padding-top: 0.5rem; scroll-margin-top: 5rem; }
+.hint { color: #c6becd; font-size: 0.875rem; margin: 0 0 0.5rem; }
+.hint button, .shortcuts button {
+  color: #4dc9b3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 44px;
+}
+.promptRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f7f7f7;
+  input {
+    min-width: 0;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    font: inherit;
+    font-size: 1rem;
+    color: inherit;
+    caret-color: #f7f7f7;
+    min-height: 44px;
+    &:focus-visible { outline: none; box-shadow: 0 1px #4dc9b3; }
+  }
+}
+.promptSymbol { flex-shrink: 0; }
+.runButton { font-size: 0.875rem; color: #4dc9b3; min-width: 44px; min-height: 44px; &:disabled { color: #a99fb2; cursor: default; } }
+.shortcuts { display: flex; gap: 1.25rem; font-size: 0.875rem; }
+.terminalWindow button:focus-visible { outline-color: #4dc9b3; }
+@media (max-width: 768px) {
+  .aboutContainer .terminal .terminalWindow .statement { margin-inline: 1rem; margin-bottom: 1.25rem; line-height: 1.5; }
+  .aboutContainer .terminal .terminalWindow .statement:first-child { padding-top: 1.25rem; }
+  .history, .promptArea { margin-inline: 1rem; }
 }

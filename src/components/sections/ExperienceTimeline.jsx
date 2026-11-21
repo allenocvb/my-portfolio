@@ -25,7 +25,6 @@ const ExperienceTimeline = ({ experiences }) => {
               boxShadow: "0 3px 10px rgba(0, 0, 0, 0.08)",
               border: "1px solid var(--border)",
               borderRadius: "25px",
-              padding: "1.5rem",
             }}
             contentArrowStyle={{ borderRight: "7px solid var(--border)" }}
             iconStyle={{
