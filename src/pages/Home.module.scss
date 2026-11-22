@@ -1,0 +1,13 @@
+.home {
+  max-width: 1104px;
+  margin: 0 auto;
+  padding: 80px clamp(1.5rem, 5vw, 3rem) 4rem;
+  text-align: left;
+}
+.section {
+  margin-top: clamp(4rem, 8vw, 7rem);
+  scroll-margin-top: 7rem;
+}
+@media (max-width: 600px) {
+  .home { padding-inline: 1.5rem; padding-bottom: 2.5rem; }
+}

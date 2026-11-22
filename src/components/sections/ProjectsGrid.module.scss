@@ -1,7 +1,7 @@
 .projectsContainer {
-  max-width: 1000px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0;
 }
 
 .projectsGrid {
@@ -93,7 +93,7 @@
 .iconLink { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; }
 .cardTitle, .cardDesc, .cardTech { overflow-wrap: anywhere; }
 @media (max-width: 600px) {
-  .projectsContainer { width: 100%; padding: 0 clamp(1.5rem, 10vw, 3.25rem); }
+  .projectsContainer { width: 100%; padding: 0; }
   .projectsGrid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
   .projectCard { padding: 1.1rem 1.2rem; border-radius: 12px; }
   .cardHeader { margin-bottom: 0.5rem; }

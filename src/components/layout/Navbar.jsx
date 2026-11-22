@@ -42,7 +42,7 @@ const Navbar = ({ onEject }) => {
           <FolderKanban className={styles.navIcon} />
           <span className={styles.navText}>Projects</span>
         </a>
-        <a href="#contact" onClick={(event) => { event.preventDefault(); scrollToSection("contact"); } } aria-label="Contact">
+        <a href="mailto:aodoom04@gmail.com" aria-label="Contact">
           <Mail className={styles.navIcon} />
           <span className={styles.navText}>Contact</span>
         </a>

@@ -3,12 +3,12 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 0 3rem;
-  max-width: 1200px;
+  padding: 0;
+  width: 100%;
 
   .terminal {
     width: 100%;
-    max-width: 1000px;
+    max-width: 100%;
 
     .terminalHeader {
       height: 28px;
@@ -50,7 +50,7 @@
         0 5px 15px rgba(0, 0, 0, 0.12);
       font-family: "Monaco", Consolas, "Lucida Console", monospace;
       width: 100%;
-      max-width: 1000px;
+      max-width: 100%;
       font-size: 1rem;
       line-height: 1.5;
       padding-bottom: 2rem;
@@ -87,11 +87,11 @@
   }
 
   @media (max-width: 1024px) {
-    padding: 0 2rem;
+    padding: 0;
   }
 
   @media (max-width: 768px) {
-    padding: 0 1rem;
+    padding: 0;
   }
 }
 
@@ -199,7 +199,7 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-  max-width: 1000px;
+  max-width: 100%;
   min-height: 44px;
   padding: 0 9px;
   background-color: var(--terminal-bar);
@@ -251,7 +251,7 @@
 
 /* Phones: same width as the project cards, and text that reads the same size as the hero. */
 @media (max-width: 600px) {
-  .aboutContainer { padding: 0 clamp(1.8rem, 5vw, 3.25rem); }
+  .aboutContainer { padding: 0; }
   .reopen { padding-inline: 9px; }
 }
 @media (max-width: 768px) {
