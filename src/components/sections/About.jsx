@@ -158,7 +158,7 @@ export default function About({ statements, onPlay }) {
           <span className={styles.reopenDots} aria-hidden="true">
             <span className={styles.red} /><span className={styles.yellow} /><span className={styles.green} />
           </span>
-          <span>terminal closed — click to reopen</span>
+          <span>you hate my terminal? :( </span>
         </button>
       </section>
     );
