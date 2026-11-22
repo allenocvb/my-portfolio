@@ -169,3 +169,10 @@
   p.location, p.description { font-size: 1rem; line-height: 1.5; }
   p.timeframe { font-size: 0.875rem; line-height: 1.5; }
 }
+
+/* Phones: body text matches the hero description (size, weight, line height). */
+@media (max-width: 768px) {
+  .timelineContainer :global(.vertical-timeline-element-content) {
+    p.location, p.description { font-size: 1rem; font-weight: 200; line-height: 1.55; }
+  }
+}

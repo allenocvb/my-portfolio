@@ -107,3 +107,8 @@
   .projectCard:hover { transform: none; }
   .projectCard { transition: none; }
 }
+
+/* Phones: body text matches the hero description (size, weight, line height). */
+@media (max-width: 768px) {
+  .cardDesc { font-size: 1rem; font-weight: 200; line-height: 1.55; }
+}

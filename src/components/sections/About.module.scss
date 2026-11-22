@@ -97,15 +97,9 @@
 
 .history, .promptArea { margin: 0 35px; }
 .history {
-  position: relative;
-  max-height: min(24rem, 50svh);
-  overflow-y: auto;
-  overscroll-behavior: contain;
-  scrollbar-color: #8c8395 #2d2b2f;
   padding-block: 0.5rem;
-  &:focus-visible { outline: 2px solid #4dc9b3; outline-offset: 4px; }
 }
-.historyEntry { margin-bottom: 1.25rem; white-space: pre-wrap; }
+.historyEntry { margin-bottom: 1.25rem; white-space: pre-wrap; scroll-margin-top: 6rem; }
 .terminalWindow .inputStatement { color: #f7f7f7; &::before { content: ">\a0"; } }
 .terminalWindow .returnStatement { color: #e7d184; }
 .outputItem { margin: 0.5rem 0; }
@@ -148,4 +142,120 @@
   .aboutContainer .terminal .terminalWindow .statement { margin-inline: 1rem; margin-bottom: 1.25rem; line-height: 1.5; }
   .aboutContainer .terminal .terminalWindow .statement:first-child { padding-top: 1.25rem; }
   .history, .promptArea { margin-inline: 1rem; }
+}
+
+/* Fixed-size window: everything inside scrolls instead of the terminal growing. */
+.aboutContainer .terminal .terminalWindow {
+  height: min(51.5rem, calc(100svh - 8rem));
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #8c8395 #2d2b2f;
+  cursor: text;
+}
+
+/* Traffic lights: red closes, green expands (yellow stays decorative). Same look, bigger tap area. */
+.aboutContainer .terminal .terminalHeader button.headerButton {
+  position: relative;
+  padding: 0;
+  appearance: none;
+  cursor: pointer;
+  &::before { content: ""; position: absolute; inset: -8px -5px; }
+  &:focus-visible { outline: 2px solid #4dc9b3; outline-offset: 2px; }
+}
+
+/* Expanded: the terminal fills the screen above everything (Esc, green or the backdrop to exit). */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(10, 8, 14, 0.55);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.18s ease;
+}
+.aboutContainer .terminal.expanded {
+  position: fixed;
+  inset: max(1rem, 3vh) max(1rem, 3vw);
+  z-index: 1101;
+  max-width: none;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  animation: zoomIn 0.2s ease;
+  .terminalWindow {
+    flex: 1;
+    height: auto;
+    max-width: none;
+    border-radius: 0 0 6px 6px;
+  }
+}
+.aboutContainer .terminal.closing {
+  animation: closeOut 0.2s ease forwards;
+  pointer-events: none;
+}
+
+/* Closed: a slim title bar to bring it back. */
+.reopen {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  min-height: 44px;
+  padding: 0 9px;
+  background-color: var(--terminal-bar);
+  border-radius: 10px;
+  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  font-size: 0.85rem;
+  color: var(--muted);
+  cursor: pointer;
+  animation: zoomIn 0.2s ease;
+  transition: color 0.15s ease;
+  &:hover { color: var(--text); }
+}
+.reopenDots {
+  display: flex;
+  gap: 9px;
+  span { width: 12px; height: 12px; border-radius: 50%; }
+  .red { background-color: #f96256; border: solid 1px #f65549; }
+  .yellow { background-color: #fdbc3d; border: solid 1px #ffb524; }
+  .green { background-color: #33c948; border: solid 1px #2dbb41; }
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes zoomIn { from { opacity: 0; transform: scale(0.97); } to { opacity: 1; transform: scale(1); } }
+@keyframes closeOut { to { opacity: 0; transform: scale(0.95); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .backdrop, .aboutContainer .terminal.expanded, .reopen { animation: none; }
+}
+
+/* macOS-style symbols on the traffic lights when hovering the title bar. */
+.aboutContainer .terminal .terminalHeader .headerButton { position: relative; }
+.glyph {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  opacity: 0;
+  pointer-events: none;
+  stroke: rgba(0, 0, 0, 0.6);
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  fill: none;
+  transition: opacity 0.12s ease;
+}
+.glyphFill { fill: rgba(0, 0, 0, 0.6); stroke: none; }
+.aboutContainer .terminal .terminalHeader:hover .glyph,
+.aboutContainer .terminal .terminalHeader button:focus-visible .glyph { opacity: 1; }
+
+/* Phones: same width as the project cards, and text that reads the same size as the hero. */
+@media (max-width: 600px) {
+  .aboutContainer { padding: 0 clamp(1.5rem, 10vw, 3.25rem); }
+  .reopen { padding-inline: 9px; }
+}
+@media (max-width: 768px) {
+  .aboutContainer .terminal .terminalWindow { font-size: 0.875rem; line-height: 1.55; }
+  .aboutContainer .terminal .terminalWindow .statement { line-height: 1.55; }
+  .promptRow input { font-size: 16px; } /* keeps iOS from zooming in on focus */
 }

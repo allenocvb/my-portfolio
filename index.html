@@ -66,10 +66,11 @@
     </script>
   </head>
   <body class="overflow-hidden">
-    <div id="root" class="transition-opacity duration-1000">
+    <!-- VCR intro. It sits outside #root so the site can render behind it before the reveal. -->
+    <div id="intro" aria-hidden="true">
       <div
         id="vcr"
-        class="overlay absolute flex flex-col bg-black pointer-events-none w-full text-4xl sm:text-5xl md:text-6xl lg:text-8xl h-screen pb-32 p-8 md:p-16 text-white font-mono motion-reduce:transition-none transition-opacity duration-500"
+        class="overlay absolute inset-0 flex flex-col bg-black pointer-events-none w-full text-4xl sm:text-5xl md:text-6xl lg:text-8xl h-full pb-32 p-8 md:p-16 text-white font-mono"
       >
         <div
           class="flex justify-between mb-auto animate-pulse motion-reduce:animate-none"
@@ -92,11 +93,14 @@
           <p class="glitch">SP</p>
         </div>
       </div>
+      <canvas class="intro-noise" width="160" height="100"></canvas>
+      <div class="intro-tracking"></div>
     </div>
+    <div id="root"></div>
     <script>
-      // Immediately hide VCR intro for non-home routes to prevent flash
+      // Immediately hide the VCR intro for non-home routes to prevent a flash
       if (window.location.pathname !== "/") {
-        document.getElementById("vcr").style.display = "none";
+        document.getElementById("intro").style.display = "none";
         document.body.classList.remove("overflow-hidden");
       }
     </script>

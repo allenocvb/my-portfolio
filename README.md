@@ -25,7 +25,7 @@ Visit the live site: [allenodoom.com](https://allenodoom.com)
 ## Features
 
 - Responsive design
-- Interactive "VCR" intro screen
+- Interactive "VCR" intro screen with a VHS static and screen-tearing transition into the site
 - Smooth scrolling navigation
 - Project showcase with GitHub links
 - Vertical experience timeline
@@ -33,7 +33,7 @@ Visit the live site: [allenodoom.com](https://allenodoom.com)
 - Comment system (Giscus/GitHub Discussions)
 - Animated backgrounds
 - "Eject" feature
-- Interactive terminal (type `help` for commands)
+- Interactive terminal (type `help` for commands) in a macOS-style window: red closes, green goes full screen
 - Playable Space Invader game: press **PLAY ▶** on the eject screen, or type `play` in the terminal
   - You play as the site's invader; desktop: A/D or ←/→ to move, Space to fire, P to pause
   - Mobile: drag anywhere to move, hold to fire
@@ -59,6 +59,7 @@ src/
 ├── data/             # Data files (experiences, projects, blogPosts, aboutMe)
 ├── styles/           # Shared styles
 ├── utils/            # Terminal commands, theme helpers
+├── intro.js          # VCR intro screen and its transition (also used by Rewind)
 ├── App.jsx           # Main app with routing
 └── main.jsx          # Entry point with intro screen
 ```
