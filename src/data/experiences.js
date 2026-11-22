@@ -5,7 +5,7 @@ export default [
     company: "Pinterest",
     location: "Remote (NYC based)",
     previousTimeframe: "May 2025 - August 2025",
-    timeframe: "Returning July 2026",
+    timeframe: "July 15th - Present",
     description:
       "SWE in the Pinner Actionability org. Working across the stack in order to design and build new experiences for Pinners.",
     highlights: [
