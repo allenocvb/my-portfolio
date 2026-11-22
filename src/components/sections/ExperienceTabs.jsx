@@ -49,7 +49,8 @@ export default function ExperienceTabs({ experiences }) {
             id={`${id}-tab-${index}`} aria-controls={`${id}-panel-${index}`} aria-selected={active === index}
             tabIndex={active === index ? 0 : -1} ref={(node) => { tabs.current[index] = node; }}
             className={styles.tab} onClick={() => setActive(index)} onKeyDown={(event) => onKeyDown(event, index)}>
-            {experience.tabLabel || experience.company}
+            {experience.logo && <img src={experience.logo} alt="" width="28" height="28" className={styles.companyLogo} />}
+            <span>{experience.tabLabel || experience.company}</span>
           </button>
         ))}
       </div>

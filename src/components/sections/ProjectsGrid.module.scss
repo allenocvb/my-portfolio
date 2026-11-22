@@ -67,24 +67,24 @@
 }
 
 .cardTitle {
-  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   color: var(--heading);
-  font-size: 1.35rem;
+  font-size: var(--font-card-title);
   font-weight: 600;
   margin-bottom: 0.75rem;
 }
 
 .cardDesc {
-  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   color: var(--text);
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: var(--body-leading);
   flex-grow: 1;
   margin-bottom: 1.5rem;
 }
 
 .cardTech {
-  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  font-family: var(--font-mono);
   color: var(--accent);
   font-size: 0.85rem;
   font-weight: 500;
@@ -110,5 +110,5 @@
 
 /* Phones: body text matches the hero description (size, weight, line height). */
 @media (max-width: 768px) {
-  .cardDesc { font-size: 1rem; font-weight: 200; line-height: 1.55; }
+  .cardDesc { font-size: 1rem; font-weight: 400; line-height: 1.55; }
 }

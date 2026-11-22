@@ -1,5 +1,5 @@
 .timelineContainer {
-  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -173,6 +173,6 @@
 /* Phones: body text matches the hero description (size, weight, line height). */
 @media (max-width: 768px) {
   .timelineContainer :global(.vertical-timeline-element-content) {
-    p.location, p.description { font-size: 1rem; font-weight: 200; line-height: 1.55; }
+    p.location, p.description { font-size: 1rem; font-weight: 400; line-height: 1.55; }
   }
 }

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 12rem minmax(0, 1fr);
   gap: 2rem;
-  font-family: "Camphor", "Open Sans", "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   color: var(--text);
 }
 .tabs {
@@ -13,10 +13,13 @@
   border-left: 1px solid var(--border);
 }
 .tab {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
   min-height: 52px;
   padding: 0.85rem 1.1rem;
   text-align: left;
-  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  font-family: var(--font-mono);
   font-size: 0.875rem;
   line-height: 1.5;
   color: var(--muted);
@@ -34,7 +37,7 @@
   &:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; border-radius: 4px; }
 }
 .title {
-  font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+  font-size: var(--font-card-title);
   line-height: 1.5;
   font-weight: 600;
   color: var(--heading);
@@ -49,7 +52,7 @@
   padding: 0;
   list-style: none;
   font-size: 1rem;
-  line-height: 1.75;
+  line-height: var(--body-leading);
   li { position: relative; padding-left: 1.35rem; margin-bottom: 1rem; }
   li::before { content: "▹"; position: absolute; left: 0; color: var(--accent); }
 }
@@ -70,3 +73,14 @@
   .panel { padding: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .tab { transition: none; } }
+
+.companyLogo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  padding: 3px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: #fff;
+}

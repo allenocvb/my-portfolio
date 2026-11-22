@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.scss";
 import spaceInvadersGif from "/assets/spaceinvadersgif.gif";
-import { Briefcase, FolderKanban, Mail, BookOpen } from "lucide-react";
+import { Briefcase, FolderKanban, BookOpen } from "lucide-react";
 
 const Navbar = ({ onEject }) => {
   const scrollToSection = (sectionId) => {
@@ -41,10 +41,6 @@ const Navbar = ({ onEject }) => {
         <a href="#projects" onClick={(event) => { event.preventDefault(); scrollToSection("projects"); } } aria-label="Projects">
           <FolderKanban className={styles.navIcon} />
           <span className={styles.navText}>Projects</span>
-        </a>
-        <a href="mailto:aodoom04@gmail.com" aria-label="Contact">
-          <Mail className={styles.navIcon} />
-          <span className={styles.navText}>Contact</span>
         </a>
         <Link
           to="/blog"

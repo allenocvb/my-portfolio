@@ -48,7 +48,7 @@
         0 50px 100px rgba(50, 50, 93, 0.15),
         0 15px 35px rgba(50, 50, 93, 0.2),
         0 5px 15px rgba(0, 0, 0, 0.12);
-      font-family: "Monaco", Consolas, "Lucida Console", monospace;
+      font-family: var(--font-mono);
       width: 100%;
       max-width: 100%;
       font-size: 1rem;
@@ -204,7 +204,7 @@
   padding: 0 9px;
   background-color: var(--terminal-bar);
   border-radius: 10px;
-  font-family: "Monaco", Consolas, "Lucida Console", monospace;
+  font-family: var(--font-mono);
   font-size: 0.85rem;
   color: var(--muted);
   cursor: pointer;
