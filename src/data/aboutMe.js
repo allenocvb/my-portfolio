@@ -1,7 +1,7 @@
 export default [
   {
     input: "Allen.currentLocation",
-    return: '"State College, Pennsylvania"',
+    return: '"Philadelphia, Pennsylvania"',
   },
   {
     input: "Allen.contactInfo",

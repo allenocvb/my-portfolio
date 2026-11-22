@@ -7,7 +7,7 @@ export default [
     previousTimeframe: "May 2025 - August 2025",
     timeframe: "Returning July 2026",
     description:
-      "SWE on the Home Feed product team. Designed and shipped a Home Feed discovery module for Pinterest mobile, leveraging user interest vectors and topic extraction services to drive serendipitous context discovery for millions of users. Ran experiments for Shopping Modules and improved a core API.",
+      "SWE in the Pinner Actionability org. Working across the stack in order to design and build new experiences for Pinners.",
     logo: "/assets/pinterest-logo.png",
     companyLink: "https://www.pinterestcareers.com/",
   },
