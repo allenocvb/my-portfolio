@@ -98,9 +98,9 @@
   .projectCard { padding: 1.1rem 1.2rem; border-radius: 12px; }
   .cardHeader { margin-bottom: 0.5rem; }
   .projectImage { width: 40px; height: 40px; }
-  .cardTitle { font-size: 1.2rem; margin-bottom: 0.5rem; }
+  .cardTitle { font-size: 1.125rem; margin-bottom: 0.5rem; }
   .cardDesc { margin-bottom: 0.85rem; }
-  .cardTech { font-size: 0.875rem; }
+  .cardTech { font-size: 0.8125rem; }
   .links { gap: 2px; }
 }
 @media (hover: none), (prefers-reduced-motion: reduce) {
@@ -110,5 +110,7 @@
 
 /* Phones: body text matches the hero description (size, weight, line height). */
 @media (max-width: 768px) {
-  .cardDesc { font-size: 1rem; font-weight: 400; line-height: 1.55; }
+  .cardTitle { font-size: 1.125rem; }
+  .cardDesc { font-size: 0.9375rem; font-weight: 400; line-height: 1.65; }
+  .cardTech { font-size: 0.8125rem; }
 }

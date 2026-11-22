@@ -84,3 +84,9 @@
   border-radius: 6px;
   background: #fff;
 }
+
+@media (max-width: 768px) {
+  .title { font-size: 1.125rem; }
+  .highlights { font-size: 0.9375rem; line-height: 1.65; }
+  .timeframe, .previous, .location { font-size: 0.8125rem; }
+}

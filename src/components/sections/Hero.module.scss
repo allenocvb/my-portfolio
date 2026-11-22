@@ -82,13 +82,13 @@
     }
 
     @media (max-width: 768px) {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       max-width: 100%;
       margin: 20px 0;
     }
 
     @media (max-width: 480px) {
-      font-size: 1rem;
+      font-size: 0.9375rem;
       margin: 15px 0;
     }
   }
@@ -102,12 +102,12 @@
     line-height: 1.55;
     color: var(--accent);
     margin-top: -30px;
-    margin-bottom: 50px;
+    margin-bottom: var(--section-gap);
 
     @media (max-width: 768px) {
       font-size: 0.9rem;
       margin-top: -10px;
-      margin-bottom: 20px;
+      margin-bottom: var(--section-gap);
     }
 
     @media (max-width: 480px) {
