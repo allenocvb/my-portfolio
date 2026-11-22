@@ -251,7 +251,7 @@
 
 /* Phones: same width as the project cards, and text that reads the same size as the hero. */
 @media (max-width: 600px) {
-  .aboutContainer { padding: 0 clamp(1.5rem, 10vw, 3.25rem); }
+  .aboutContainer { padding: 0 clamp(1.8rem, 5vw, 3.25rem); }
   .reopen { padding-inline: 9px; }
 }
 @media (max-width: 768px) {
