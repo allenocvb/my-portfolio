@@ -2,6 +2,7 @@
 // Lives outside React (in index.html) so it can cover the page while the site renders underneath.
 // showIntro() can be called again later (Rewind) without reloading the page.
 import { PowerGlitch } from "powerglitch";
+import { glitchOnce } from "./utils/glitch";
 
 export const INTRO_ENABLED = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -64,20 +65,6 @@ function startStatic(canvas) {
 
 const rand = (min, max) => min + Math.random() * (max - min);
 
-// Big, random jolts of the whole picture in different directions, building up.
-function shakeScreen(element, duration) {
-  const frames = [];
-  const steps = 20;
-  for (let i = 0; i <= steps; i++) {
-    const power = i === steps ? 0 : 0.35 + (i / steps) * 0.65;
-    frames.push({
-      transform: `translate(${rand(-70, 70) * power}px, ${rand(-40, 40) * power}px) rotate(${rand(-2.5, 2.5) * power}deg) skewX(${rand(-12, 12) * power}deg) scale(${1 + rand(-0.06, 0.06) * power})`,
-      easing: "steps(1, end)",
-    });
-  }
-  return element.animate(frames, { duration, fill: "forwards" });
-}
-
 // Rips the VCR picture into horizontal strips that slide off in different directions and
 // drop out one by one, so the site (already rendered underneath) shows through the tears.
 function tearApart(screen, before, duration) {
@@ -138,11 +125,12 @@ async function playTransition() {
   const page = document.getElementById("root");
   if (!screen.animate) return;
 
-  const total = 1700;
-  const tearAt = 450;
+  const total = 1200;
+  const tearAt = 320;
   const stopStatic = startStatic(noise);
 
-  shakeScreen(intro, total * 0.8);
+  // The whole screen shakes and slices, the same glitch as when the intro loads and on Eject.
+  const endShake = glitchOnce(intro, total);
   noise.animate(
     [
       { opacity: 0 },
@@ -157,8 +145,8 @@ async function playTransition() {
     ],
     { duration: total, fill: "forwards" },
   );
-  tracking.animate([{ top: "-30%" }, { top: "110%" }], { duration: 480, iterations: 3, easing: "linear", fill: "forwards" });
-  tracking.animate([{ opacity: 1 }, { opacity: 1, offset: 0.8 }, { opacity: 0 }], { duration: 1440, fill: "forwards" });
+  tracking.animate([{ top: "-30%" }, { top: "110%" }], { duration: 400, iterations: 2, easing: "linear", fill: "forwards" });
+  tracking.animate([{ opacity: 1 }, { opacity: 1, offset: 0.8 }, { opacity: 0 }], { duration: 1000, fill: "forwards" });
 
   // The picture jerks around while the text glitches...
   screen.animate(
@@ -173,7 +161,7 @@ async function playTransition() {
     { duration: tearAt },
   );
   // ...then tears apart.
-  setTimeout(() => tearApart(screen, noise, total - tearAt - 120), tearAt);
+  setTimeout(() => tearApart(screen, noise, total - tearAt - 100), tearAt);
 
   // The site rolls in under the tears, jittering and colour-shifting until the signal locks.
   page.animate(
@@ -194,6 +182,7 @@ async function playTransition() {
 
   await new Promise((resolve) => setTimeout(resolve, total));
   stopStatic();
+  endShake();
   intro.querySelectorAll(".intro-strip").forEach((strip) => strip.remove());
 }
 

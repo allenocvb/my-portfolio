@@ -96,18 +96,18 @@ strike {
 }
 :root[data-theme="dark"] {
   color-scheme: dark;
-  --page: #17151c;
-  --text: #dedbe6;
-  --heading: #f4f0fa;
-  --muted: #b1aaba;
+  --page: #2b2b2b;
+  --text: #d9d9d9;
+  --heading: #ffffff;
+  --muted: #bfbfbf;
   --accent: #c49ae9;
   --link-hover: #aaa8ff;
-  --surface: #28242f;
-  --surface-hover: #342d3e;
-  --surface-soft: #221e29;
-  --border: #443b50;
-  --nav: rgba(23, 21, 28, 0.94);
-  --terminal-bar: #3c3546;
+  --surface: #363636;
+  --surface-hover: #404040;
+  --surface-soft: #333333;
+  --border: #595959;
+  --nav: rgba(43, 43, 43, 0.94);
+  --terminal-bar: #404040;
   --inline-code: #f29bc2;
 }
 body { background: var(--page); color: var(--text); }

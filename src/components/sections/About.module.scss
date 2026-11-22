@@ -42,12 +42,8 @@
     }
 
     .terminalWindow {
-      background-color: #2d2b2f;
+      background-color: #232323;
       border-radius: 0 0 4px 4px;
-      box-shadow:
-        0 50px 100px rgba(50, 50, 93, 0.15),
-        0 15px 35px rgba(50, 50, 93, 0.2),
-        0 5px 15px rgba(0, 0, 0, 0.12);
       font-family: var(--font-mono);
       width: 100%;
       max-width: 100%;
@@ -149,7 +145,7 @@
   height: min(51.5rem, calc(100svh - 8rem));
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #8c8395 #2d2b2f;
+  scrollbar-color: #8c8395 #232323;
   cursor: text;
 }
 

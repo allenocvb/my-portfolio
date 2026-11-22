@@ -11,13 +11,5 @@
   text-align: left;
 
   &::before { content: ">"; color: var(--accent); }
-  &::after {
-    content: "";
-    height: 1px;
-    background: var(--border);
-    flex: 1;
-    max-width: 20rem;
-    margin-left: 0.5em;
-  }
   @media (max-width: 600px) { margin-bottom: 1.75rem; }
 }

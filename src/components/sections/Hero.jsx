@@ -5,6 +5,10 @@ import styles from "./Hero.module.scss";
 
 const Hero = () => {
   const [triggerFlip, setTriggerFlip] = useState(false);
+  // Coming in through the VCR intro, wait for the transition to settle before typing.
+  const [typingDelay] = useState(() =>
+    document.getElementById("intro")?.style.display !== "none" ? 1200 : 700,
+  );
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -32,9 +36,7 @@ const Hero = () => {
       <Typewriter
         className={styles.heroTitle}
         text="Allen Odoom"
-        minTypeSpeed={100}
-        maxTypeSpeed={150}
-        initDelay={700}
+        delay={typingDelay}
         onComplete={handleTypewriterComplete}
       />
       <div className={styles.heroDescription}>

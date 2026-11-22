@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { PowerGlitch } from "powerglitch";
+import { glitchOnce } from "./utils/glitch";
 import Home from "./pages/Home";
 import BlogIndex from "./pages/blog/index";
 import BlogPost from "./pages/blog/BlogPost";
@@ -10,53 +10,17 @@ import { INTRO_ENABLED, onIntroStart, showIntro } from "./intro";
 
 const audio = new Audio("/effect.webm");
 
-// Glitches the whole page for a second. Returns a function that ends the glitch and
-// undoes PowerGlitch's wrapping of <body> (it moves <body> into two divs and leaves
-// hidden full-page copies behind, which would otherwise pile up without a page reload).
+// Glitches the whole page for a second, then cleans up after PowerGlitch.
 const glitchBody = () => {
   const body = document.body;
   // Once <body> is wrapped and shaken it clips its own content; with a full-screen fixed
   // page inside (the eject screen) that clipped everything and left a blank screen.
   const overflow = body.style.overflow;
   body.style.overflow = "visible";
-  const glitch = PowerGlitch.glitch(body, {
-    playMode: "always",
-    createContainers: true,
-    hideOverflow: false,
-    timing: {
-      duration: 1000,
-      iterations: 1,
-      easing: "ease-in-out",
-    },
-    glitchTimeSpan: {
-      start: 0,
-      end: 1,
-    },
-    shake: {
-      velocity: 15,
-      amplitudeX: 0.2,
-      amplitudeY: 0.2,
-    },
-    slice: {
-      count: 6,
-      velocity: 15,
-      minHeight: 0.02,
-      maxHeight: 0.15,
-      hueRotate: true,
-    },
-  });
-
+  const end = glitchOnce(body, 1000);
   return () => {
-    glitch.stopGlitch();
-    const layers = body.parentElement;
-    const container = layers?.parentElement;
-    if (layers && container && container !== document.documentElement) {
-      document.documentElement.insertBefore(body, container);
-      container.remove();
-    }
-    body.style.gridArea = "";
+    end();
     body.style.overflow = overflow;
-    delete body.dataset.glitched;
   };
 };
 
