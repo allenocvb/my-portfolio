@@ -4,7 +4,10 @@ Welcome to the repository of my personal portfolio website. This site showcases 
 
 ## Live Demo
 
-Visit the live site: [allenodoom.com](https://allenodoom.com)
+Visit the live site: [allenodoom.com](https://allenodoom.com) 
+
+<img width="1491" height="850" alt="Screenshot 2026-11-21 at 10 11 53 PM" src="https://github.com/user-attachments/assets/72cf83ee-2d69-4748-be7b-a728416bd567" />
+
 
 ## Technologies Used
 
